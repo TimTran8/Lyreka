@@ -25,10 +25,10 @@ class EndPopupViewController: UIViewController {
     
     
     @IBAction func playNext(_ sender: UIButton) {
-//        if index_currentSong < songs.count
-//        {
-//            index_currentSong += 1
-//        }
+        if index_currentSong < songs.count
+        {
+            index_currentSong += 1
+        }
 
         performSegue(withIdentifier: "backToGame", sender: self)
     }
