@@ -9,11 +9,17 @@
 import UIKit
 import AVFoundation
 
+var index_question = 0
+var timer = Timer()
+var lyrics_text = ["Fly me to the moon", "Let me play among the stars", "Let me see what spring is like"]
+var lyrics_timestamp = [10, 17, 25]
+
 class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var songName: UILabel!
     
-
+    @IBOutlet weak var lyrics: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Loaded")
@@ -30,6 +36,10 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         {
             do
             {
+                //Run lyrics
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.action), userInfo: nil, repeats: true)
+                
+                //Play Song
                 let audioPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".mp3")
                 try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
                 audioPlayer.delegate = self
@@ -45,6 +55,30 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
 
+    }
+    
+    @objc func action()
+    {
+        
+        currentPlayingTime = audioPlayer.currentTime
+        
+        if Int(currentPlayingTime) >= lyrics_timestamp[index_question] && Int(currentPlayingTime) <= lyrics_timestamp[index_question] + 5
+        {
+            lyrics.text = lyrics_text[index_question]
+            if Int(currentPlayingTime) >= lyrics_timestamp[index_question] + 4
+            {
+                index_question += 1
+            }
+            
+        }
+        else
+        {
+            lyrics.text = ""
+        }
+        if index_question >= lyrics_text.count
+        {
+            index_question = 0
+        }
     }
     
     

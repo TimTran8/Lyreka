@@ -388,6 +388,7 @@
                         <viewLayoutGuide key="safeArea" id="2tw-al-kyc"/>
                     </view>
                     <connections>
+                        <outlet property="lyrics" destination="BbC-5k-7kN" id="uMb-Ji-4eJ"/>
                         <outlet property="songName" destination="D5I-6N-qGu" id="5TJ-F6-AcR"/>
                         <segue destination="NVk-0w-McW" kind="presentation" identifier="endGame" id="ixJ-ew-Dl8"/>
                     </connections>
