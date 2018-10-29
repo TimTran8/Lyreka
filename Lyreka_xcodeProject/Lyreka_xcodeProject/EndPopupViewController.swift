@@ -25,23 +25,29 @@ class EndPopupViewController: UIViewController {
     
     
     @IBAction func playNext(_ sender: UIButton) {
-        
-        self.view.removeFromSuperview()
+//        if index_currentSong < songs.count
+//        {
+//            index_currentSong += 1
+//        }
+
+        performSegue(withIdentifier: "backToGame", sender: self)
     }
     
     @IBAction func playAgain(_ sender: UIButton) {
-        audioPlayer.play()
-        self.view.removeFromSuperview()
+//        audioPlayer.play()
+        performSegue(withIdentifier: "backToGame", sender: self)
     }
     
     
     @IBAction func toPlaylist(_ sender: UIButton) {
+        isGameEnd = true
         performSegue(withIdentifier: "endToPlaylist", sender: self)
         
     }
     
     
     @IBAction func toMainMenu(_ sender: UIButton) {
+        isGameEnd = true
         performSegue(withIdentifier: "endToMain", sender: self)
     }
     

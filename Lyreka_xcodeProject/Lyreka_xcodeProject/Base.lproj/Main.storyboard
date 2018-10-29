@@ -202,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqb-6i-uc6">
-                                <rect key="frame" x="16" y="222" width="343" height="242"/>
+                                <rect key="frame" x="16" y="212" width="343" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH2-Ap-2Nj">
@@ -261,12 +261,13 @@
                     <connections>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToMain" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="c4R-Yg-SUF"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToPlaylist" unwindAction="unwindToPlaylistViewControllerWithUnwindSegue:" id="K1B-ZJ-h0l"/>
+                        <segue destination="W9B-Ye-SBc" kind="unwind" identifier="backToGame" unwindAction="unwindToGameViewControllerWithUnwindSegue:" id="rZX-UJ-O3z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgG-Sf-V4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="W9B-Ye-SBc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2792.8000000000002" y="809.14542728635683"/>
+            <point key="canvasLocation" x="2844" y="32"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="TVk-YY-xfz">
@@ -388,6 +389,7 @@
                     </view>
                     <connections>
                         <outlet property="songName" destination="D5I-6N-qGu" id="5TJ-F6-AcR"/>
+                        <segue destination="NVk-0w-McW" kind="presentation" identifier="endGame" id="ixJ-ew-Dl8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qei-O4-NS3" userLabel="First Responder" sceneMemberID="firstResponder"/>

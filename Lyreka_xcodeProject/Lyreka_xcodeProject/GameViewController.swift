@@ -16,24 +16,38 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("Loaded")
         // Do any additional setup after loading the view.
-        do
-        {
-            let audioPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".mp3")
-            try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
-            audioPlayer.delegate = self
-            songDuration = audioPlayer.duration
-            songName.text = songs[index_currentSong]
-            audioPlayer.play()
 
-        }
-        catch
-        {
-            print ("ERROR: Game not started")
-        }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Appear")
+        
+        if isGameEnd == false
+        {
+            do
+            {
+                let audioPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".mp3")
+                try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+                audioPlayer.delegate = self
+                songDuration = audioPlayer.duration
+                songName.text = songs[index_currentSong]
+                audioPlayer.play()
+                
+            }
+            catch
+            {
+                print ("ERROR: Game not started")
+            }
+        }
+        
+
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -47,11 +61,13 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.stop()
         
         //Show popup window
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! EndPopupViewController
-        self.addChildViewController(popOverVC)
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParentViewController: self)
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! EndPopupViewController
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
+        performSegue(withIdentifier: "endGame", sender: self)
+        
     }
     
     //MARK: Button
@@ -72,6 +88,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         popOverVC.didMove(toParentViewController: self)
         
     }
+    
+    //MARK: back to game
+    @IBAction func unwindToGameViewController(unwindSegue: UIStoryboardSegue){}
     
 
     

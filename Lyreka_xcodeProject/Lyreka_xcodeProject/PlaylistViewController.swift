@@ -16,6 +16,7 @@ var currentPlayingTime = audioPlayer.currentTime
 var songDuration = audioPlayer.duration
 var index_currentSong = 0
 var isFirstTime = true
+var isGameEnd = false
 
 
 class PlaylistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -63,6 +64,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             gettingSongName()
             isFirstTime = false
         }
+        isGameEnd = false
         
     }
 
