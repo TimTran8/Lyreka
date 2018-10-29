@@ -15,6 +15,13 @@
 		4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62979321838FD60049E074 /* PlaylistViewController.swift */; };
 		4BB0FF102183ACA900DA380F /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */; };
 		4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF112183AD9A00DA380F /* OptionViewController.swift */; };
+		4BD8476921862EB800263029 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8476821862EB800263029 /* GameViewController.swift */; };
+		4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8476A2186300F00263029 /* PausePopupViewController.swift */; };
+		4BD847722186443900263029 /* The Power Of Love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8476F2186443900263029 /* The Power Of Love.mp3 */; };
+		4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847702186443900263029 /* Fly Me To The Moon.mp3 */; };
+		4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847712186443900263029 /* Yesterday Once More.mp3 */; };
+		4BD847762186702700263029 /* 5 second song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847752186702700263029 /* 5 second song.mp3 */; };
+		4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8477721867C5300263029 /* EndPopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		4B62979321838FD60049E074 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		4BB0FF112183AD9A00DA380F /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		4BD8476821862EB800263029 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4BD8476A2186300F00263029 /* PausePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopupViewController.swift; sourceTree = "<group>"; };
+		4BD8476F2186443900263029 /* The Power Of Love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Power Of Love.mp3"; sourceTree = "<group>"; };
+		4BD847702186443900263029 /* Fly Me To The Moon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fly Me To The Moon.mp3"; sourceTree = "<group>"; };
+		4BD847712186443900263029 /* Yesterday Once More.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Yesterday Once More.mp3"; sourceTree = "<group>"; };
+		4BD847752186702700263029 /* 5 second song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 second song.mp3"; sourceTree = "<group>"; };
+		4BD8477721867C5300263029 /* EndPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +78,28 @@
 				4BB0FF112183AD9A00DA380F /* OptionViewController.swift */,
 				4B62979321838FD60049E074 /* PlaylistViewController.swift */,
 				4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */,
+				4BD8476821862EB800263029 /* GameViewController.swift */,
 				4B62977F21838C060049E074 /* AppDelegate.swift */,
 				4B62978321838C060049E074 /* Main.storyboard */,
+				4BD8477721867C5300263029 /* EndPopupViewController.swift */,
+				4BD8476A2186300F00263029 /* PausePopupViewController.swift */,
 				4B62978621838C070049E074 /* Assets.xcassets */,
 				4B62978821838C070049E074 /* LaunchScreen.storyboard */,
 				4B62978B21838C070049E074 /* Info.plist */,
+				4BD8476E2186443900263029 /* songs */,
 			);
 			path = Lyreka_xcodeProject;
+			sourceTree = "<group>";
+		};
+		4BD8476E2186443900263029 /* songs */ = {
+			isa = PBXGroup;
+			children = (
+				4BD847752186702700263029 /* 5 second song.mp3 */,
+				4BD847702186443900263029 /* Fly Me To The Moon.mp3 */,
+				4BD847712186443900263029 /* Yesterday Once More.mp3 */,
+				4BD8476F2186443900263029 /* The Power Of Love.mp3 */,
+			);
+			path = songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,9 +160,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD847762186702700263029 /* 5 second song.mp3 in Resources */,
+				4BD847722186443900263029 /* The Power Of Love.mp3 in Resources */,
 				4B62978A21838C070049E074 /* LaunchScreen.storyboard in Resources */,
+				4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */,
 				4B62978721838C070049E074 /* Assets.xcassets in Resources */,
 				4B62978521838C060049E074 /* Main.storyboard in Resources */,
+				4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +178,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B62978021838C060049E074 /* AppDelegate.swift in Sources */,
+				4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */,
+				4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */,
 				4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */,
 				4B62979221838C9F0049E074 /* MainViewController.swift in Sources */,
 				4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */,
+				4BD8476921862EB800263029 /* GameViewController.swift in Sources */,
 				4BB0FF102183ACA900DA380F /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

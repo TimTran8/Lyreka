@@ -23,6 +23,8 @@ class PopupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: Buttons
+    //
     @IBAction func closePopup(_ sender: UIButton) {
         self.view.removeFromSuperview()
     }

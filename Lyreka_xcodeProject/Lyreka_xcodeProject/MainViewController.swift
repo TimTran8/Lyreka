@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //Force landscape
+    
 //    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
 //        return .landscapeLeft
 //    }
@@ -35,9 +37,9 @@ class MainViewController: UIViewController {
     
     
     
-    @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue){
-        
-    }
+    @IBAction func unwindToMainViewController(unwindSegue: UIStoryboardSegue){}
+    
+    
     
 
     @IBAction func exitApp(_ sender: UIButton) {
