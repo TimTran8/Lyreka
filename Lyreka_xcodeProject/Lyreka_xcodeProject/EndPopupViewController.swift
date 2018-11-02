@@ -10,12 +10,16 @@ import UIKit
 import AVFoundation
 
 class EndPopupViewController: UIViewController {
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    var score = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor(red: 128/255.0, green: 128/255.0, blue: 128/255.0, alpha: 0.8)
+        scoreLabel.text = "Score: " + String(score)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +28,15 @@ class EndPopupViewController: UIViewController {
     }
     
     
+    
+    //MARK: Buttons
     @IBAction func playNext(_ sender: UIButton) {
-        if index_currentSong < songs.count
+        if index_currentSong < songs.count - 1
         {
             index_currentSong += 1
+            performSegue(withIdentifier: "backToGame", sender: self)
         }
 
-        performSegue(withIdentifier: "backToGame", sender: self)
     }
     
     @IBAction func playAgain(_ sender: UIButton) {

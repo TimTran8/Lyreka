@@ -15,6 +15,8 @@
 		4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62979321838FD60049E074 /* PlaylistViewController.swift */; };
 		4BB0FF102183ACA900DA380F /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */; };
 		4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF112183AD9A00DA380F /* OptionViewController.swift */; };
+		4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */; };
+		4BC81C75218BB8690048E8AF /* Yesterday Once More.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4BC81C74218BB8690048E8AF /* Yesterday Once More.lrc */; };
 		4BD8476921862EB800263029 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8476821862EB800263029 /* GameViewController.swift */; };
 		4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8476A2186300F00263029 /* PausePopupViewController.swift */; };
 		4BD847722186443900263029 /* The Power Of Love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD8476F2186443900263029 /* The Power Of Love.mp3 */; };
@@ -35,6 +37,8 @@
 		4B62979321838FD60049E074 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		4BB0FF112183AD9A00DA380F /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
+		4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fly Me To The Moon.lrc"; sourceTree = "<group>"; };
+		4BC81C74218BB8690048E8AF /* Yesterday Once More.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Yesterday Once More.lrc"; sourceTree = "<group>"; };
 		4BD8476821862EB800263029 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4BD8476A2186300F00263029 /* PausePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PausePopupViewController.swift; sourceTree = "<group>"; };
 		4BD8476F2186443900263029 /* The Power Of Love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Power Of Love.mp3"; sourceTree = "<group>"; };
@@ -96,7 +100,9 @@
 			children = (
 				4BD847752186702700263029 /* 5 second song.mp3 */,
 				4BD847702186443900263029 /* Fly Me To The Moon.mp3 */,
+				4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */,
 				4BD847712186443900263029 /* Yesterday Once More.mp3 */,
+				4BC81C74218BB8690048E8AF /* Yesterday Once More.lrc */,
 				4BD8476F2186443900263029 /* The Power Of Love.mp3 */,
 			);
 			path = songs;
@@ -167,6 +173,8 @@
 				4B62978721838C070049E074 /* Assets.xcassets in Resources */,
 				4B62978521838C060049E074 /* Main.storyboard in Resources */,
 				4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */,
+				4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */,
+				4BC81C75218BB8690048E8AF /* Yesterday Once More.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
