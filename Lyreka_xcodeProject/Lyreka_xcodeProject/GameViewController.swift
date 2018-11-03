@@ -43,6 +43,13 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
 
         
     }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -268,6 +275,25 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     //MARK: Button
+//    @IBAction func pauseSong(_ sender: UIButton) {
+//        //Pause the song
+//        if audioPlayer.isPlaying == true
+//        {
+//            currentPlayingTime = audioPlayer.currentTime
+//            print ("Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
+//            audioPlayer.pause()
+////            timer.invalidate()
+//        }
+//
+//        //Show popup window
+//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pauseSong") as! PausePopupViewController
+//        self.addChildViewController(popOverVC)
+//        popOverVC.view.frame = self.view.frame
+//        self.view.addSubview(popOverVC.view)
+//        popOverVC.didMove(toParentViewController: self)
+//
+//    }
+    
     @IBAction func pauseSong(_ sender: UIButton) {
         //Pause the song
         if audioPlayer.isPlaying == true
@@ -275,7 +301,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             currentPlayingTime = audioPlayer.currentTime
             print ("Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
             audioPlayer.pause()
-//            timer.invalidate()
+            //            timer.invalidate()
         }
         
         //Show popup window
@@ -284,7 +310,6 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         popOverVC.view.frame = self.view.frame
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
-        
     }
     
     

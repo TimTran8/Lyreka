@@ -53,6 +53,13 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
 
     }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

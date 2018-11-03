@@ -14,6 +14,14 @@ class EndPopupViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

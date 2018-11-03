@@ -21,13 +21,13 @@ class MainViewController: UIViewController {
     
     //Force landscape
     
-//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//        return .landscapeLeft
-//    }
-//
-//    override var shouldAutorotate: Bool {
-//        return true
-//    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
 
 
     override func didReceiveMemoryWarning() {

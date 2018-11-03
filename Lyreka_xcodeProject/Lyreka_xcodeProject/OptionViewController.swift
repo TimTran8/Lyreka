@@ -32,6 +32,13 @@ class OptionViewController: UIViewController {
         popOverVC.didMove(toParentViewController: self)
         
     }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
+    }
+    
+    override var shouldAutorotate: Bool {
+        return true
+    }
     
 
     /*
