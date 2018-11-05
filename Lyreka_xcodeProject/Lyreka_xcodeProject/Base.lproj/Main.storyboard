@@ -226,8 +226,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfA-3w-fus">
-                                        <rect key="frame" x="127" y="8" width="89" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfA-3w-fus">
+                                        <rect key="frame" x="39" y="8" width="277" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -290,6 +290,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="jH2-Ap-2Nj" id="W2h-Z8-POO"/>
+                        <outlet property="songName" destination="VfA-3w-fus" id="91h-cu-Qyr"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToMain" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="c4R-Yg-SUF"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToPlaylist" unwindAction="unwindToPlaylistViewControllerWithUnwindSegue:" id="K1B-ZJ-h0l"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="backToGame" unwindAction="unwindToGameViewControllerWithUnwindSegue:" id="rZX-UJ-O3z"/>
@@ -298,7 +299,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgG-Sf-V4F" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="W9B-Ye-SBc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2842" y="44"/>
+            <point key="canvasLocation" x="2841.2293853073465" y="44"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="TVk-YY-xfz">

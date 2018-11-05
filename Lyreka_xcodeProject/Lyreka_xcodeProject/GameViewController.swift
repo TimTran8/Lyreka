@@ -1,5 +1,10 @@
 //
-//  GameViewController.swift
+//  File:       GameViewController.swift
+//  Purpose:    This file is the view controller for the game view where user can listen to the song and fill the blank in the lyrics
+//  Project:    Lyreka_xcodeProject
+//  Group:      Lyreka CMPT275-FALL18-Group08
+//  For the contributors, changes, and bugs of this file, please refer to https://github.com/TimTran8/CMPT275Group8
+//
 //  Lyreka_xcodeProject
 //
 //  Created by Li heng Ou on 10/28/18.
@@ -9,22 +14,21 @@
 import UIKit
 import AVFoundation
 
-var index_question = 0
-var timer = Timer()
-var lyrics_text = ["Fly me to the moon", "Let me play among the stars", "Let me see what spring is like"]
-var lyrics_timestamp = [10, 17, 25]
 
 class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
-    var lyrics_text2:[String] = []
-    var lyrics_timestamp2:[Float] = []
-    var options:[[String]] = [[],[],[],[]]
-    var index_question2 = 0
-    var isQuestion = false
-    var isShown = false
-    var rightAnswerPlacement:UInt32 = 0
-    var chanceAnswer = 3
-    var score = 0
+    //MARK: Variables
+    
+    var lyrics_text2:[String] = []  //Store the lyrics of the corresponding song
+    var lyrics_timestamp2:[Float] = []  //Store the timestamp for every lyrics
+    var options:[[String]] = [[],[],[],[]]  //Store the options for each questions
+    var index_question2 = 0 //Index for the questions
+    var isQuestion = false //Set true when question shows up
+    var isShown = false //Set true when lyrics is shown
+    var rightAnswerPlacement:UInt32 = 0 //Index of the correct answer
+    var chanceAnswer = 3 //Number of chance allow to select the options
+    var score = 0   //The score gained in the game
+    var timer = Timer() //Set timer to run the lyrics
     
     
     @IBOutlet weak var songName: UILabel!
@@ -35,25 +39,48 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var option3: UIButton!
     @IBOutlet weak var option4: UIButton!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("Loaded")
-        // Do any additional setup after loading the view.
-
-        
-    }
+    //Variable: supportedInterfaceOrientations
+    //Description: Set UI orientation to landscapeLeft
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeLeft
     }
-    
+    //Variable: shouldAutorotate
+    //Description: UI should be rotated automatically
     override var shouldAutorotate: Bool {
         return true
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("Appear")
+    //MARK: Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("Loaded")
+        
+
+        // Do any additional setup after loading the view.
+        lyrics_text2 = []
+        lyrics_timestamp2 = []
+        options = [[],[],[],[]]
+        isShown = false
+        rightAnswerPlacement = 0
+        chanceAnswer = 3
+        score = 0
+        isGameEnd = false
+    }
+    
+
+    //Function: viewWillAppear(_ animated: Bool)
+    //Description:   Before Game view appears, the lyrics should be loaded, and audio player should begin to play.
+    //              The timer should start so that the lyrics can show up.
+    override func viewWillAppear(_ animated: Bool)
+    {
+        lyrics_text2 = []
+        lyrics_timestamp2 = []
+        options = [[],[],[],[]]
+        isShown = false
+        rightAnswerPlacement = 0
+        chanceAnswer = 3
+        score = 0
         
         if isGameEnd == false
         {
@@ -94,35 +121,20 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 print ("ERROR: Game not started")
             }
         }
-        
+        super.viewWillAppear(animated)
+        print("Appear")
 
     }
     
+    //Function: showLyrics()
+    //Description:   Run the lyrics at every timestamps in the lyrics label
     @objc func showLyrics()
     {
         
         currentPlayingTime = audioPlayer.currentTime
         
-//        if Int(currentPlayingTime) >= lyrics_timestamp[index_question] && Int(currentPlayingTime) <= lyrics_timestamp[index_question] + 5
-//        {
-//            lyrics.text = lyrics_text[index_question]
-//            if Int(currentPlayingTime) >= lyrics_timestamp[index_question] + 4
-//            {
-//                index_question += 1
-//            }
-//
-//        }
-//        else
-//        {
-//            lyrics.text = ""
-//        }
-//        if index_question >= lyrics_text.count
-//        {
-//            index_question = 0
-//        }
         if index_question2 < lyrics_text2.count - 1
         {
-
             if Float(currentPlayingTime) >= lyrics_timestamp2[index_question2] && Float(currentPlayingTime) <= lyrics_timestamp2[index_question2+1]
             {
                 if Float(currentPlayingTime) >= lyrics_timestamp2[index_question2+1] - 1
@@ -144,12 +156,6 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                     {
                         isQuestion = false
                     }
-                    
-//                    option1.setTitle(options[0][index_question2], for: .normal)
-//                    option2.setTitle(options[1][index_question2], for: .normal)
-//                    option3.setTitle(options[2][index_question2], for: .normal)
-//                    option4.setTitle(options[3][index_question2], for: .normal)
-                    
                     if(isQuestion == true)
                     {
                         var option_btn:UIButton = UIButton()
@@ -187,12 +193,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                     isShown = true
                     print("Lyrics loaded: " + String(currentPlayingTime) + " | " + String(lyrics_timestamp2[index_question2]))
                 }
-
             }
-//            else
-//            {
-//                lyrics.text = ""
-//            }
         }
         else
         {
@@ -201,9 +202,12 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
 
     }
     
+    
+    //Function: loadLyrics()
+    //Description:  Load the lyrics from the local library to the lyrics_text2
     func loadLyrics()
     {
-//        let folderURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
+        print("Loading Lyrics...")
         let lrcPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".lrc")
         let filemgr = FileManager.default
         
@@ -251,49 +255,28 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Pass score to the end VC
+    //Function: prepare(for segue: UIStoryboardSegue, sender: Any?)
+    //Description:  Pass score to the end VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var endGameVC = segue.destination as! EndPopupViewController
         endGameVC.score = score
     }
-    
-    //Event when song done
+ 
+    //Function: audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
+    //Description: Define the event when song done
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
     {
         print("Song Done Game")
         audioPlayer.stop()
         timer.invalidate()
         
-        //Show popup window
-//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! EndPopupViewController
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParentViewController: self)
         performSegue(withIdentifier: "endGame", sender: self)
         
     }
     
-    //MARK: Button
-//    @IBAction func pauseSong(_ sender: UIButton) {
-//        //Pause the song
-//        if audioPlayer.isPlaying == true
-//        {
-//            currentPlayingTime = audioPlayer.currentTime
-//            print ("Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
-//            audioPlayer.pause()
-////            timer.invalidate()
-//        }
-//
-//        //Show popup window
-//        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pauseSong") as! PausePopupViewController
-//        self.addChildViewController(popOverVC)
-//        popOverVC.view.frame = self.view.frame
-//        self.view.addSubview(popOverVC.view)
-//        popOverVC.didMove(toParentViewController: self)
-//
-//    }
-    
+    //MARK: Buttons
+    //Function: pauseSong(_ sender: UIButton)
+    //Description: When the pause button is pressed, the Pause popup view should show up
     @IBAction func pauseSong(_ sender: UIButton) {
         //Pause the song
         if audioPlayer.isPlaying == true
@@ -312,7 +295,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         popOverVC.didMove(toParentViewController: self)
     }
     
-    
+
+    //Function: chooseAnswer(_ sender: UIButton)
+    //Description: When the button is pressed, the player chose the answer to the question
     @IBAction func chooseAnswer(_ sender: UIButton) {
         if sender.tag == Int(rightAnswerPlacement)
         {
@@ -359,19 +344,11 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    //MARK: back to game
+    //MARK: Exit
+    //Function: unwindToGameViewController(unwindSegue: UIStoryboardSegue)
+    //Description:  This funcion can be called by any view that will return to the Game view
     @IBAction func unwindToGameViewController(unwindSegue: UIStoryboardSegue){}
     
 
-    
-    /*
-    // MARK: - Navigatio/Users/lihengo/Desktop/Yesterday Once More.lrcn
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

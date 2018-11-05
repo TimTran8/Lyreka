@@ -1,6 +1,11 @@
 //
-//  AppDelegate.swift
-//  sample_c
+//  File:       AppDelegate.swift
+//  Purpose:    This file declares the app delegates
+//  Project:    Lyreka_xcodeProject
+//  Group:      Lyreka CMPT275-FALL18-Group08
+//  For the contributors, changes, and bugs of this file, please refer to https://github.com/TimTran8/CMPT275Group8
+//
+//  Lyreka_xcodeProject
 //
 //  Created by Li heng Ou on 10/26/18.
 //  Copyright © 2018 Li heng Ou. All rights reserved.

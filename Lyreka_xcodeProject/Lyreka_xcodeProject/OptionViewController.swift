@@ -1,6 +1,9 @@
+//  File:       OptionViewController.swift
+//  Purpose:    This file is the view controller for the option menu which contains the buttons for customizing the app setting
+//  Project:    Lyreka_xcodeProject
+//  Group:      Lyreka CMPT275-FALL18-Group08
+//  For the contributors, changes, and bugs of this file, please refer to https://github.com/TimTran8/CMPT275Group8
 //
-//  OptionViewController.swift
-//  sample_c
 //
 //  Created by Li heng Ou on 10/26/18.
 //  Copyright © 2018 Li heng Ou. All rights reserved.
@@ -9,21 +12,29 @@
 import UIKit
 
 class OptionViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    //MARK: Variables
+    
+    //Force landscape
+    
+    //Variable: supportedInterfaceOrientations
+    //Description: Set UI orientation to landscapeLeft
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscapeLeft
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //Variable: shouldAutorotate
+    //Description: UI should be rotated automatically
+    override var shouldAutorotate: Bool {
+        return true
     }
+    
+    //MARK: Functions
     
     //MARK: Buttons
     
-    //Don't Touch
+    //Function: showPopup
+    //Input: UIButton
+    //Desription: When button is pressed, the PopupViewController should show up
     @IBAction func showPopup(_ sender: UIButton) {
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popup_NotImplemented") as! PopupViewController
         self.addChildViewController(popOverVC)
@@ -32,23 +43,20 @@ class OptionViewController: UIViewController {
         popOverVC.didMove(toParentViewController: self)
         
     }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeLeft
-    }
     
-    override var shouldAutorotate: Bool {
-        return true
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
