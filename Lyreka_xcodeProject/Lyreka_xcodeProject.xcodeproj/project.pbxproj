@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		305859A4218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */; };
 		4B62978021838C060049E074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62977F21838C060049E074 /* AppDelegate.swift */; };
 		4B62978521838C060049E074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978321838C060049E074 /* Main.storyboard */; };
 		4B62978721838C070049E074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978621838C070049E074 /* Assets.xcassets */; };
@@ -26,7 +27,20 @@
 		4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8477721867C5300263029 /* EndPopupViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		305859A6218FC236000C5806 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B62977421838C060049E074 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B62977B21838C060049E074;
+			remoteInfo = Lyreka_xcodeProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lyreka_xcodeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lyreka_xcodeProjectUITests.swift; sourceTree = "<group>"; };
+		305859A5218FC236000C5806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyreka_xcodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B62977F21838C060049E074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B62978421838C060049E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3058599E218FC236000C5806 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B62977921838C060049E074 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,11 +80,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		305859A2218FC236000C5806 /* Lyreka_xcodeProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */,
+				305859A5218FC236000C5806 /* Info.plist */,
+			);
+			path = Lyreka_xcodeProjectUITests;
+			sourceTree = "<group>";
+		};
 		4B62977321838C060049E074 = {
 			isa = PBXGroup;
 			children = (
 				4B62977E21838C060049E074 /* Lyreka_xcodeProject */,
-				4B62977D21838C060049E074 /* Products */,
+				305859A2218FC236000C5806 /* Lyreka_xcodeProjectUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */,
+				305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		4B62977E21838C060049E074 /* Lyreka_xcodeProject */ = {
@@ -80,6 +112,7 @@
 			children = (
 				4B62979121838C9F0049E074 /* MainViewController.swift */,
 				4BB0FF112183AD9A00DA380F /* OptionViewController.swift */,
+				4B62977D21838C060049E074 /* Products */,
 				4B62979321838FD60049E074 /* PlaylistViewController.swift */,
 				4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */,
 				4BD8476821862EB800263029 /* GameViewController.swift */,
@@ -111,6 +144,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		305859A0218FC236000C5806 /* Lyreka_xcodeProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 305859AA218FC236000C5806 /* Build configuration list for PBXNativeTarget "Lyreka_xcodeProjectUITests" */;
+			buildPhases = (
+				3058599D218FC236000C5806 /* Sources */,
+				3058599E218FC236000C5806 /* Frameworks */,
+				3058599F218FC236000C5806 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				305859A7218FC236000C5806 /* PBXTargetDependency */,
+			);
+			name = Lyreka_xcodeProjectUITests;
+			productName = Lyreka_xcodeProjectUITests;
+			productReference = 305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		4B62977B21838C060049E074 /* Lyreka_xcodeProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B62978E21838C070049E074 /* Build configuration list for PBXNativeTarget "Lyreka_xcodeProject" */;
@@ -138,6 +189,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Li heng Ou";
 				TargetAttributes = {
+					305859A0218FC236000C5806 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 4B62977B21838C060049E074;
+					};
 					4B62977B21838C060049E074 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -157,11 +212,19 @@
 			projectRoot = "";
 			targets = (
 				4B62977B21838C060049E074 /* Lyreka_xcodeProject */,
+				305859A0218FC236000C5806 /* Lyreka_xcodeProjectUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3058599F218FC236000C5806 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B62977A21838C060049E074 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -181,6 +244,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3058599D218FC236000C5806 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				305859A4218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4B62977821838C060049E074 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -197,6 +268,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		305859A7218FC236000C5806 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B62977B21838C060049E074 /* Lyreka_xcodeProject */;
+			targetProxy = 305859A6218FC236000C5806 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4B62978321838C060049E074 /* Main.storyboard */ = {
@@ -218,6 +297,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		305859A8218FC236000C5806 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lyreka_xcodeProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lyreka.Lyreka-xcodeProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lyreka_xcodeProject;
+			};
+			name = Debug;
+		};
+		305859A9218FC236000C5806 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lyreka_xcodeProjectUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Lyreka.Lyreka-xcodeProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lyreka_xcodeProject;
+			};
+			name = Release;
+		};
 		4B62978C21838C070049E074 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -337,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T35AH4C47;
 				INFOPLIST_FILE = Lyreka_xcodeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -354,6 +470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5T35AH4C47;
 				INFOPLIST_FILE = Lyreka_xcodeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,6 +486,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		305859AA218FC236000C5806 /* Build configuration list for PBXNativeTarget "Lyreka_xcodeProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				305859A8218FC236000C5806 /* Debug */,
+				305859A9218FC236000C5806 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4B62977721838C060049E074 /* Build configuration list for PBXProject "Lyreka_xcodeProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
