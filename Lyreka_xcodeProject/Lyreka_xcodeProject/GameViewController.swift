@@ -54,7 +54,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Loaded")
+        print("DEBUG: View Loaded")
         
 
         // Do any additional setup after loading the view.
@@ -66,6 +66,8 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         chanceAnswer = 3
         score = 0
         isGameEnd = false
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
     }
     
 
@@ -101,6 +103,11 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 option3.isEnabled = false
                 option4.isEnabled = false
                 
+                option1.backgroundColor = UIColor.lightGray
+                option2.backgroundColor = UIColor.lightGray
+                option3.backgroundColor = UIColor.lightGray
+                option4.backgroundColor = UIColor.lightGray
+                
                 score = 0
                 chanceAnswer = 3
                 
@@ -122,9 +129,31 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             }
         }
         super.viewWillAppear(animated)
-        print("Appear")
+        print("DEBUG: View Appear")
 
     }
+    
+    @objc func appDidEnterBackground() {
+        // stop counter
+        print("DEBUG: Enter background.")
+        
+        //Pause the song
+        if audioPlayer.isPlaying == true
+        {
+            currentPlayingTime = audioPlayer.currentTime
+            print ("DEBUG: Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
+            audioPlayer.pause()
+            //            timer.invalidate()
+        }
+        
+        //Show popup window
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "pauseSong") as! PausePopupViewController
+        self.addChildViewController(popOverVC)
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
+    }
+    
     
     //Function: showLyrics()
     //Description:   Run the lyrics at every timestamps in the lyrics label
@@ -150,7 +179,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                     {
                         isQuestion = true
                         chanceAnswer = 3
-                        print("Question")
+                        print("DEBGU: Question")
                     }
                     else
                     {
@@ -191,7 +220,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                         }
                     }
                     isShown = true
-                    print("Lyrics loaded: " + String(currentPlayingTime) + " | " + String(lyrics_timestamp2[index_question2]))
+                    print("DEBGU: Lyrics loaded: " + String(currentPlayingTime) + " | " + String(lyrics_timestamp2[index_question2]))
                 }
             }
         }
@@ -207,7 +236,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     //Description:  Load the lyrics from the local library to the lyrics_text2
     func loadLyrics()
     {
-        print("Loading Lyrics...")
+        print("DEBUG: Loading Lyrics...")
         let lrcPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".lrc")
         let filemgr = FileManager.default
         
@@ -258,7 +287,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     //Function: prepare(for segue: UIStoryboardSegue, sender: Any?)
     //Description:  Pass score to the end VC
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var endGameVC = segue.destination as! EndPopupViewController
+        let endGameVC = segue.destination as! EndPopupViewController
         endGameVC.score = score
     }
  
@@ -266,7 +295,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     //Description: Define the event when song done
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
     {
-        print("Song Done Game")
+        print("DEBUG: Song Done")
         audioPlayer.stop()
         timer.invalidate()
         
@@ -282,7 +311,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         if audioPlayer.isPlaying == true
         {
             currentPlayingTime = audioPlayer.currentTime
-            print ("Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
+            print ("DEBUG: Current time stampe: " + String(currentPlayingTime) + "/" + String(songDuration))
             audioPlayer.pause()
             //            timer.invalidate()
         }
@@ -301,7 +330,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func chooseAnswer(_ sender: UIButton) {
         if sender.tag == Int(rightAnswerPlacement)
         {
-            print("Correct")
+            print("DEBUG: Correct")
             isQuestion = false
             
             score = score + chanceAnswer
@@ -320,7 +349,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
         else
         {
-            print("Wrong")
+            print("DEBUG: Wrong")
             chanceAnswer -= 1
             if chanceAnswer == 0
             {
