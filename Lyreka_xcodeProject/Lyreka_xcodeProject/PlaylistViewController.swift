@@ -76,6 +76,18 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             index_currentSong = indexPath.row
             performSegue(withIdentifier: "startGame", sender: self)
     }
+    
+    
+    //Function: tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    //Description: Delete a row in the table view
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
+    {
+        if editingStyle == .delete
+        {
+            songs.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .bottom)
+        }
+    }
 
 
     override func viewDidLoad() {
