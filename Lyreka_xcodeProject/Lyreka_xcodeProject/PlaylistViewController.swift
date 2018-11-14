@@ -24,12 +24,17 @@ var songDuration = audioPlayer.duration //Read the total duration of the song
 var isFirstTime = true //Set true when the audio player runs in the first time
 var isGameEnd = false //Set true when the song ends
 
+
+
+
 class PlaylistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //MARK: Variables
     
     //Variable: myTableView
     //Description: The table view will show the playlist with the song names
     @IBOutlet weak var myTableView: UITableView!
+    
+    
     
     //Force landscape
     
@@ -88,6 +93,16 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             tableView.deleteRows(at: [indexPath], with: .bottom)
         }
     }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let tmp = songs[sourceIndexPath.row]
+        songs.remove(at: sourceIndexPath.row)
+        songs.insert(tmp, at: destinationIndexPath.row)
+    }
 
 
     override func viewDidLoad() {
@@ -100,12 +115,15 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
         isGameEnd = false
         
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
     
     //Function: gettingSongName()
