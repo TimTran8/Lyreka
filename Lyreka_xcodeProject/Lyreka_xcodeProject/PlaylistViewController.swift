@@ -21,9 +21,17 @@ var audioPlayer = AVAudioPlayer() //The audioPlayer to play the song selected
 var currentPlayingTime = audioPlayer.currentTime //Read the current timestamp when song is being played
 var songDuration = audioPlayer.duration //Read the total duration of the song
 
+var highScores:[Int] = [] //Store the high score for each song in the playlist
+
 var isFirstTime = true //Set true when the audio player runs in the first time
 var isGameEnd = false //Set true when the song ends
 
+func playlistSync()
+{
+    UserDefaults.standard.set(songs, forKey: "myPlaylist")
+    UserDefaults.standard.set(highScores, forKey: "myHighScores")
+    print("DEBUG: Sync Done")
+}
 
 
 
@@ -34,6 +42,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     //Description: The table view will show the playlist with the song names
     @IBOutlet weak var myTableView: UITableView!
     
+    @IBOutlet weak var editButton: UIButton!
     
     
     //Force landscape
@@ -67,8 +76,10 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     //Description:  Display the song names for each cell in the table view
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+//        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlaylistCell
         cell.textLabel?.text = songs[indexPath.row]
+        cell.highScore_label.text = String(highScores[indexPath.row])
         return cell
     }
     
@@ -82,6 +93,13 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
             performSegue(withIdentifier: "startGame", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if myTableView.isEditing
+        {
+            return .delete
+        }
+        return .none
+    }
     
     //Function: tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath)
     //Description: Delete a row in the table view
@@ -90,7 +108,9 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         if editingStyle == .delete
         {
             songs.remove(at: indexPath.row)
+            highScores.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
+            playlistSync()
         }
     }
     
@@ -102,6 +122,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         let tmp = songs[sourceIndexPath.row]
         songs.remove(at: sourceIndexPath.row)
         songs.insert(tmp, at: destinationIndexPath.row)
+        
+        let tmp2 = highScores[sourceIndexPath.row]
+        highScores.remove(at: sourceIndexPath.row)
+        highScores.insert(tmp2, at: destinationIndexPath.row)
+        playlistSync()
     }
 
 
@@ -115,8 +140,14 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
         isGameEnd = false
         
-        
-        
+        print("DEBUG: Playlist view loaded")
+ 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        myTableView.reloadData()
+        print("Debug: Playlist view will appear")
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,6 +161,13 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     //Description:  Load the song names into the variable songs[] from the local library
     func gettingSongName()
     {
+        songs = UserDefaults.standard.array(forKey: "myPlaylist") as? [String] ?? [String]()
+        highScores = UserDefaults.standard.array(forKey: "myHighScores") as? [Int] ?? [Int]()
+        if songs.isEmpty == false
+        {
+            return
+        }
+        
         let folderURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
         
         do
@@ -147,8 +185,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     mySong = mySong.replacingOccurrences(of: "%20", with: " ")
                     mySong = mySong.replacingOccurrences(of: ".mp3", with: "")
                     songs.append(mySong)
+                    
+                    highScores.append(0)
                 }
             }
+            playlistSync()
             myTableView.reloadData()
         }
         catch
@@ -157,13 +198,31 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    
+
+    
     //Function: playSong(_ sender: UIButton)
     //Description:  Navigate to the Game View
-    @IBAction func playSong(_ sender: UIButton) {
-        index_currentSong = 0
-
-        performSegue(withIdentifier: "startGame", sender: self)
-
+//    @IBAction func playSong(_ sender: UIButton) {
+//        index_currentSong = 0
+//
+//        performSegue(withIdentifier: "startGame", sender: self)
+//
+//    }
+    
+    
+    @IBAction func editPlaylist(_ sender: UIButton) {
+        if myTableView.isEditing == false
+        {
+            myTableView.isEditing = true
+            editButton.setTitle("Done", for: .normal)
+            
+        }
+        else
+        {
+            myTableView.isEditing = false
+            editButton.setTitle("Edit", for: .normal)
+        }
     }
     
 

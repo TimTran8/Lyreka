@@ -43,6 +43,14 @@ class EndPopupViewController: UIViewController {
         //Get and change score
         self.view.backgroundColor = UIColor(red: 128/255.0, green: 128/255.0, blue: 128/255.0, alpha: 0.8)
         scoreLabel.text = "Score: " + String(score)
+        
+        if highScores[index_currentSong] < score
+        {
+            highScores[index_currentSong] = score
+            playlistSync()
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

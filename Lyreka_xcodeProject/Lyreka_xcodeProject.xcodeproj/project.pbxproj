@@ -16,6 +16,16 @@
 		4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62979321838FD60049E074 /* PlaylistViewController.swift */; };
 		4B769DD92190E5B6000CD354 /* My Heart Will Go On.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B769DD82190E5B6000CD354 /* My Heart Will Go On.mp3 */; };
 		4B769DDD2190E95A000CD354 /* My Heart Will Go On.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B769DDC2190E95A000CD354 /* My Heart Will Go On.lrc */; };
+		4B8D8B8F21A0B75B00B0E851 /* 5 second alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B8B21A0B75B00B0E851 /* 5 second alarm.mp3 */; };
+		4B8D8B9021A0B75B00B0E851 /* 5 second alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B8B21A0B75B00B0E851 /* 5 second alarm.mp3 */; };
+		4B8D8B9521A0B75B00B0E851 /* 5 second song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B8E21A0B75B00B0E851 /* 5 second song.mp3 */; };
+		4B8D8B9621A0B75B00B0E851 /* 5 second song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B8E21A0B75B00B0E851 /* 5 second song.mp3 */; };
+		4B8D8B9821A0BB1F00B0E851 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */; };
+		4B8D8B9921A0BB1F00B0E851 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */; };
+		4B8D8B9C21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */; };
+		4B8D8B9D21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */; };
+		4B8D8B9E21A0BD2D00B0E851 /* 5 second song.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */; };
+		4B8D8B9F21A0BD2D00B0E851 /* 5 second song.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */; };
 		4BB0FF102183ACA900DA380F /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */; };
 		4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF112183AD9A00DA380F /* OptionViewController.swift */; };
 		4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */; };
@@ -51,6 +61,11 @@
 		4B62979321838FD60049E074 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		4B769DD82190E5B6000CD354 /* My Heart Will Go On.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "My Heart Will Go On.mp3"; sourceTree = "<group>"; };
 		4B769DDC2190E95A000CD354 /* My Heart Will Go On.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "My Heart Will Go On.lrc"; sourceTree = "<group>"; };
+		4B8D8B8B21A0B75B00B0E851 /* 5 second alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 second alarm.mp3"; sourceTree = "<group>"; };
+		4B8D8B8E21A0B75B00B0E851 /* 5 second song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "5 second song.mp3"; sourceTree = "<group>"; };
+		4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5 second alarm.lrc"; sourceTree = "<group>"; };
+		4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5 second song.lrc"; sourceTree = "<group>"; };
 		4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		4BB0FF112183AD9A00DA380F /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fly Me To The Moon.lrc"; sourceTree = "<group>"; };
@@ -114,6 +129,7 @@
 				4B62979121838C9F0049E074 /* MainViewController.swift */,
 				4BB0FF112183AD9A00DA380F /* OptionViewController.swift */,
 				4B62979321838FD60049E074 /* PlaylistViewController.swift */,
+				4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */,
 				4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */,
 				4BD8476821862EB800263029 /* GameViewController.swift */,
 				4B62977F21838C060049E074 /* AppDelegate.swift */,
@@ -137,6 +153,10 @@
 				4BC81C74218BB8690048E8AF /* Yesterday Once More.lrc */,
 				4B769DD82190E5B6000CD354 /* My Heart Will Go On.mp3 */,
 				4B769DDC2190E95A000CD354 /* My Heart Will Go On.lrc */,
+				4B8D8B8B21A0B75B00B0E851 /* 5 second alarm.mp3 */,
+				4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */,
+				4B8D8B8E21A0B75B00B0E851 /* 5 second song.mp3 */,
+				4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */,
 			);
 			path = songs;
 			sourceTree = "<group>";
@@ -222,6 +242,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8D8B9F21A0BD2D00B0E851 /* 5 second song.lrc in Resources */,
+				4B8D8B9021A0B75B00B0E851 /* 5 second alarm.mp3 in Resources */,
+				4B8D8B9621A0B75B00B0E851 /* 5 second song.mp3 in Resources */,
+				4B8D8B9D21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,9 +259,13 @@
 				4B769DDD2190E95A000CD354 /* My Heart Will Go On.lrc in Resources */,
 				4B62978721838C070049E074 /* Assets.xcassets in Resources */,
 				4B62978521838C060049E074 /* Main.storyboard in Resources */,
+				4B8D8B8F21A0B75B00B0E851 /* 5 second alarm.mp3 in Resources */,
+				4B8D8B9E21A0BD2D00B0E851 /* 5 second song.lrc in Resources */,
 				4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */,
 				4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */,
 				4BC81C75218BB8690048E8AF /* Yesterday Once More.lrc in Resources */,
+				4B8D8B9521A0B75B00B0E851 /* 5 second song.mp3 in Resources */,
+				4B8D8B9C21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				305859A4218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift in Sources */,
+				4B8D8B9921A0BB1F00B0E851 /* PlaylistCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +287,7 @@
 			files = (
 				4B62978021838C060049E074 /* AppDelegate.swift in Sources */,
 				4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */,
+				4B8D8B9821A0BB1F00B0E851 /* PlaylistCell.swift in Sources */,
 				4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */,
 				4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */,
 				4B62979221838C9F0049E074 /* MainViewController.swift in Sources */,

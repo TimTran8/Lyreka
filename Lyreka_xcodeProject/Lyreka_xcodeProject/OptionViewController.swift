@@ -14,6 +14,9 @@ import UIKit
 class OptionViewController: UIViewController {
     
     //MARK: Variables
+
+    @IBOutlet var themeButton: [UIButton]!
+    @IBOutlet weak var enableDifficultMode: UISwitch!
     
     //Force landscape
     
@@ -32,6 +35,20 @@ class OptionViewController: UIViewController {
     
     //MARK: Buttons
     
+    @IBAction func selectTheme(_ sender: UIButton) {
+
+        themeButton.forEach{ (button) in
+            button.isHidden = !button.isHidden
+        }
+    
+    }
+
+    
+    @IBAction func changeTheme(_ sender: UIButton) {
+        themeButton.forEach{ (button) in
+            button.isHidden = true
+        }
+    }
     //Function: showPopup
     //Input: UIButton
     //Desription: When button is pressed, the PopupViewController should show up
@@ -44,8 +61,24 @@ class OptionViewController: UIViewController {
         
     }
     
+    
+    @IBAction func enableDifficultMode(_ sender: UISwitch) {
+        if sender.isOn
+        {
+            print("DEBUG: Difficult mode is on")
+            UserDefaults.standard.set(true, forKey: "isDifficultModeOn")
+        }
+        else
+        {
+            print("DEBUG: Difficult mode is off")
+            UserDefaults.standard.set(false, forKey: "isDifficultModeOn")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        enableDifficultMode.setOn(UserDefaults.standard.bool(forKey: "isDifficultModeOn"), animated: false)
 
     }
 
