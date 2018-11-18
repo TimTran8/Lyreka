@@ -33,8 +33,23 @@ class OptionViewController: UIViewController {
     
     //MARK: Functions
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        enableDifficultMode.setOn(UserDefaults.standard.bool(forKey: "isDifficultModeOn"), animated: false)
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     //MARK: Buttons
     
+    
+    //Function: selectTheme
+    //Desription: When select theme button is pressed, the theme options should show up
     @IBAction func selectTheme(_ sender: UIButton) {
 
         themeButton.forEach{ (button) in
@@ -43,12 +58,14 @@ class OptionViewController: UIViewController {
     
     }
 
-    
+    //Function: changeTheme
+    //Desription: When theme is selected, the app theme should change (Will implement in version 3)
     @IBAction func changeTheme(_ sender: UIButton) {
         themeButton.forEach{ (button) in
             button.isHidden = true
         }
     }
+    
     //Function: showPopup
     //Input: UIButton
     //Desription: When button is pressed, the PopupViewController should show up
@@ -62,6 +79,8 @@ class OptionViewController: UIViewController {
     }
     
     
+    //Function: enableDifficultMode
+    //Desription: enable/disable the diffcult mode
     @IBAction func enableDifficultMode(_ sender: UISwitch) {
         if sender.isOn
         {
@@ -75,21 +94,15 @@ class OptionViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    //Function: browserSongDatabase
+    //Desription: When button is clicked, the user can browser the online database to download a song.
+    @IBAction func browserSongDatabase(_ sender: UIButton) {
         
-        enableDifficultMode.setOn(UserDefaults.standard.bool(forKey: "isDifficultModeOn"), animated: false)
-
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     
 
 
-    
+    @IBAction func unwindToOptionViewController(unwindSegue: UIStoryboardSegue){}
 
 }

@@ -26,6 +26,7 @@
 		4B8D8B9D21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */; };
 		4B8D8B9E21A0BD2D00B0E851 /* 5 second song.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */; };
 		4B8D8B9F21A0BD2D00B0E851 /* 5 second song.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */; };
+		4B99924321A0F08100279690 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B99924221A0F08100279690 /* WebViewController.swift */; };
 		4BB0FF102183ACA900DA380F /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */; };
 		4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB0FF112183AD9A00DA380F /* OptionViewController.swift */; };
 		4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */ = {isa = PBXBuildFile; fileRef = 4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */; };
@@ -48,10 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lyreka_xcodeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Lyreka_xcodeProjectUITests.xctest; path = "/Users/lihengo/Desktop/cmpt275_project/11-17-327/CMPT275Group8/Lyreka_xcodeProject/build/Debug-iphoneos/Lyreka_xcodeProjectUITests.xctest"; sourceTree = "<absolute>"; };
 		305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lyreka_xcodeProjectUITests.swift; sourceTree = "<group>"; };
 		305859A5218FC236000C5806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyreka_xcodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lyreka_xcodeProject.app; path = "/Users/lihengo/Desktop/cmpt275_project/11-17-327/CMPT275Group8/Lyreka_xcodeProject/build/Debug-iphoneos/Lyreka_xcodeProject.app"; sourceTree = "<absolute>"; };
 		4B62977F21838C060049E074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B62978421838C060049E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B62978621838C070049E074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		4B8D8B9A21A0BD2C00B0E851 /* 5 second alarm.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5 second alarm.lrc"; sourceTree = "<group>"; };
 		4B8D8B9B21A0BD2D00B0E851 /* 5 second song.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "5 second song.lrc"; sourceTree = "<group>"; };
+		4B99924221A0F08100279690 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		4BB0FF112183AD9A00DA380F /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		4BC81C72218B7C030048E8AF /* Fly Me To The Moon.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Fly Me To The Moon.lrc"; sourceTree = "<group>"; };
@@ -115,8 +117,6 @@
 		4B62977D21838C060049E074 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */,
-				305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -128,6 +128,7 @@
 				4B62977D21838C060049E074 /* Products */,
 				4B62979121838C9F0049E074 /* MainViewController.swift */,
 				4BB0FF112183AD9A00DA380F /* OptionViewController.swift */,
+				4B99924221A0F08100279690 /* WebViewController.swift */,
 				4B62979321838FD60049E074 /* PlaylistViewController.swift */,
 				4B8D8B9721A0BB1F00B0E851 /* PlaylistCell.swift */,
 				4BB0FF0F2183ACA900DA380F /* PopupViewController.swift */,
@@ -288,6 +289,7 @@
 				4B62978021838C060049E074 /* AppDelegate.swift in Sources */,
 				4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */,
 				4B8D8B9821A0BB1F00B0E851 /* PlaylistCell.swift in Sources */,
+				4B99924321A0F08100279690 /* WebViewController.swift in Sources */,
 				4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */,
 				4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */,
 				4B62979221838C9F0049E074 /* MainViewController.swift in Sources */,
