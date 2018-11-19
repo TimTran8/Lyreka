@@ -44,11 +44,35 @@ class EndPopupViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 128/255.0, green: 128/255.0, blue: 128/255.0, alpha: 0.8)
         scoreLabel.text = "Score: " + String(score)
         
-        if highScores[index_currentSong] < score
+        if UserDefaults.standard.string(forKey: "email") != nil
         {
-            highScores[index_currentSong] = score
-            playlistSync()
+            let email = UserDefaults.standard.string(forKey: "email")! as String
+            print(email)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy"
+            let date = formatter.string(from: Date())
+            print(date)
+            
+            
+            let url = URL(string: "http://lyreka.herokuapp.com/updateScore")!;
+            var request = URLRequest(url: url)
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "PUT"
+            let putString = "email=\(email)&date=\(date)&score=\(score)"
+            print(putString)
+            request.httpBody = putString.data(using: .utf8)
+        
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in}
+            task.resume()
         }
+        
+        
+//        if highScores[index_currentSong] < score
+//        {
+//            highScores[index_currentSong] = score
+//            playlistSync()
+//        }
         
         
     }

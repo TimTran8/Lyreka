@@ -16,6 +16,12 @@ import UIKit
 
 class PopupViewController: UIViewController {
     
+    @IBOutlet weak var userEmail: UITextField!
+    
+    @IBOutlet weak var firstName: UITextField!
+    
+    @IBOutlet weak var lastName: UITextField!
+    
     //MARK: Functions
 
     override func viewDidLoad() {
@@ -41,13 +47,35 @@ class PopupViewController: UIViewController {
 
     //MARK: Functions
     
+    
+    
     //MARK: Buttons
     
     //Function: closePopup(_ sender: UIButton)
     //Input:    sender: UIButton
     //Description:  When the button is pressed, it should close this Popup view
     @IBAction func closePopup(_ sender: UIButton) {
-        self.view.removeFromSuperview()
+        if userEmail.text != "" && firstName.text != "" && lastName.text != ""
+        {
+            UserDefaults.standard.set(userEmail.text, forKey: "email")
+            let email = UserDefaults.standard.string(forKey: "email")! as String
+            let userlastName = lastName.text! as String
+            let userfistName = firstName.text! as String
+            let url = URL(string: "http://lyreka.herokuapp.com/userID")!;
+            var request = URLRequest(url: url)
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "PUT"
+            let putString = "firstName=\(userfistName)&lastName=\(userlastName)&email=\(email)"
+            print(putString)
+            request.httpBody = putString.data(using: .utf8)
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in}
+            task.resume()
+            
+            self.view.removeFromSuperview()
+        }
+        
+        
     }
     
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		305859A4218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */; };
+		4B25050021A239CC00638B3E /* OnlineSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2504FF21A239CC00638B3E /* OnlineSongsViewController.swift */; };
 		4B62978021838C060049E074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62977F21838C060049E074 /* AppDelegate.swift */; };
 		4B62978521838C060049E074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978321838C060049E074 /* Main.storyboard */; };
 		4B62978721838C070049E074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978621838C070049E074 /* Assets.xcassets */; };
@@ -49,10 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Lyreka_xcodeProjectUITests.xctest; path = "/Users/lihengo/Desktop/cmpt275_project/11-17-327/CMPT275Group8/Lyreka_xcodeProject/build/Debug-iphoneos/Lyreka_xcodeProjectUITests.xctest"; sourceTree = "<absolute>"; };
 		305859A3218FC236000C5806 /* Lyreka_xcodeProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lyreka_xcodeProjectUITests.swift; sourceTree = "<group>"; };
 		305859A5218FC236000C5806 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lyreka_xcodeProject.app; path = "/Users/lihengo/Desktop/cmpt275_project/11-17-327/CMPT275Group8/Lyreka_xcodeProject/build/Debug-iphoneos/Lyreka_xcodeProject.app"; sourceTree = "<absolute>"; };
+		4B2504FB21A2351400638B3E /* Lyreka_xcodeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyreka_xcodeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2504FC21A2351400638B3E /* Lyreka_xcodeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lyreka_xcodeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B2504FF21A239CC00638B3E /* OnlineSongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineSongsViewController.swift; sourceTree = "<group>"; };
 		4B62977F21838C060049E074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B62978421838C060049E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B62978621838C070049E074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,8 @@
 		4B62977D21838C060049E074 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				4B2504FB21A2351400638B3E /* Lyreka_xcodeProject.app */,
+				4B2504FC21A2351400638B3E /* Lyreka_xcodeProjectUITests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -136,6 +140,7 @@
 				4B62977F21838C060049E074 /* AppDelegate.swift */,
 				4BD8477721867C5300263029 /* EndPopupViewController.swift */,
 				4BD8476A2186300F00263029 /* PausePopupViewController.swift */,
+				4B2504FF21A239CC00638B3E /* OnlineSongsViewController.swift */,
 				4B62978321838C060049E074 /* Main.storyboard */,
 				4B62978621838C070049E074 /* Assets.xcassets */,
 				4B62978821838C070049E074 /* LaunchScreen.storyboard */,
@@ -180,7 +185,7 @@
 			);
 			name = Lyreka_xcodeProjectUITests;
 			productName = Lyreka_xcodeProjectUITests;
-			productReference = 305859A1218FC236000C5806 /* Lyreka_xcodeProjectUITests.xctest */;
+			productReference = 4B2504FC21A2351400638B3E /* Lyreka_xcodeProjectUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		4B62977B21838C060049E074 /* Lyreka_xcodeProject */ = {
@@ -197,7 +202,7 @@
 			);
 			name = Lyreka_xcodeProject;
 			productName = sample_c;
-			productReference = 4B62977C21838C060049E074 /* Lyreka_xcodeProject.app */;
+			productReference = 4B2504FB21A2351400638B3E /* Lyreka_xcodeProject.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -291,6 +296,7 @@
 				4B8D8B9821A0BB1F00B0E851 /* PlaylistCell.swift in Sources */,
 				4B99924321A0F08100279690 /* WebViewController.swift in Sources */,
 				4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */,
+				4B25050021A239CC00638B3E /* OnlineSongsViewController.swift in Sources */,
 				4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */,
 				4B62979221838C9F0049E074 /* MainViewController.swift in Sources */,
 				4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */,

@@ -63,6 +63,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         options = [[],[],[],[]]
         isShown = false
         rightAnswerPlacement = 0
+        
         chanceAnswer = 3
         score = 0
         isGameEnd = false

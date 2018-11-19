@@ -21,7 +21,7 @@ var audioPlayer = AVAudioPlayer() //The audioPlayer to play the song selected
 var currentPlayingTime = audioPlayer.currentTime //Read the current timestamp when song is being played
 var songDuration = audioPlayer.duration //Read the total duration of the song
 
-var highScores:[Int] = [] //Store the high score for each song in the playlist
+//var highScores:[Int] = [] //Store the high score for each song in the playlist
 
 var isFirstTime = true //Set true when the audio player runs in the first time
 var isGameEnd = false //Set true when the song ends
@@ -29,7 +29,7 @@ var isGameEnd = false //Set true when the song ends
 func playlistSync()
 {
     UserDefaults.standard.set(songs, forKey: "myPlaylist")
-    UserDefaults.standard.set(highScores, forKey: "myHighScores")
+//    UserDefaults.standard.set(highScores, forKey: "myHighScores")
     print("DEBUG: Sync Done")
 }
 
@@ -79,7 +79,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
 //        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlaylistCell
         cell.textLabel?.text = songs[indexPath.row]
-        cell.highScore_label.text = String(highScores[indexPath.row])
+//        cell.highScore_label.text = String(highScores[indexPath.row])
         return cell
     }
     
@@ -108,7 +108,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         if editingStyle == .delete
         {
             songs.remove(at: indexPath.row)
-            highScores.remove(at: indexPath.row)
+//            highScores.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
             playlistSync()
         }
@@ -123,9 +123,9 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         songs.remove(at: sourceIndexPath.row)
         songs.insert(tmp, at: destinationIndexPath.row)
         
-        let tmp2 = highScores[sourceIndexPath.row]
-        highScores.remove(at: sourceIndexPath.row)
-        highScores.insert(tmp2, at: destinationIndexPath.row)
+//        let tmp2 = highScores[sourceIndexPath.row]
+//        highScores.remove(at: sourceIndexPath.row)
+//        highScores.insert(tmp2, at: destinationIndexPath.row)
         playlistSync()
     }
 
@@ -162,7 +162,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     func gettingSongName()
     {
         songs = UserDefaults.standard.array(forKey: "myPlaylist") as? [String] ?? [String]()
-        highScores = UserDefaults.standard.array(forKey: "myHighScores") as? [Int] ?? [Int]()
+//        highScores = UserDefaults.standard.array(forKey: "myHighScores") as? [Int] ?? [Int]()
         if songs.isEmpty == false
         {
             return
@@ -186,7 +186,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     mySong = mySong.replacingOccurrences(of: ".mp3", with: "")
                     songs.append(mySong)
                     
-                    highScores.append(0)
+//                    highScores.append(0)
                 }
             }
             playlistSync()
