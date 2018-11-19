@@ -20,6 +20,7 @@ class EndPopupViewController: UIViewController {
     
     @IBOutlet weak var songName: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var signinReminder: UILabel!
     var score = 0
 
     //Variable: supportedInterfaceOrientations
@@ -46,6 +47,7 @@ class EndPopupViewController: UIViewController {
         
         if UserDefaults.standard.string(forKey: "email") != nil
         {
+            signinReminder.text = ""
             let email = UserDefaults.standard.string(forKey: "email")! as String
             print(email)
             

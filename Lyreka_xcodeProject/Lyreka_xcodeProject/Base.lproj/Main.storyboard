@@ -513,6 +513,13 @@
                                             <action selector="playAgain:" destination="NVk-0w-McW" eventType="touchUpInside" id="auu-rg-nZ9"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in to save the scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-y0-Evq">
+                                        <rect key="frame" x="42" y="73" width="262" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95604798140000002" green="1" blue="0.9850857596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -522,6 +529,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="jH2-Ap-2Nj" id="W2h-Z8-POO"/>
+                        <outlet property="signinReminder" destination="vOe-y0-Evq" id="MTc-IT-jpT"/>
                         <outlet property="songName" destination="VfA-3w-fus" id="91h-cu-Qyr"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToMain" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="c4R-Yg-SUF"/>
                         <segue destination="W9B-Ye-SBc" kind="unwind" identifier="endToPlaylist" unwindAction="unwindToPlaylistViewControllerWithUnwindSegue:" id="K1B-ZJ-h0l"/>

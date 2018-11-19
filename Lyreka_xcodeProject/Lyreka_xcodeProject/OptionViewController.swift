@@ -70,6 +70,13 @@ class OptionViewController: UIViewController {
     //Input: UIButton
     //Desription: When button is pressed, the PopupViewController should show up
     @IBAction func showPopup(_ sender: UIButton) {
+        if UserDefaults.standard.string(forKey: "email") != nil
+        {
+            sender.setTitleColor(UIColor.lightGray, for: .normal)
+            sender.isEnabled = false
+            return
+        }
+        
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popup_NotImplemented") as! PopupViewController
         self.addChildViewController(popOverVC)
         popOverVC.view.frame = self.view.frame

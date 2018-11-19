@@ -30,6 +30,8 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     var score = 0   //The score gained in the game
     var timer = Timer() //Set timer to run the lyrics
     
+    var difficultLevel = 3
+    
     
     @IBOutlet weak var songName: UILabel!
     
@@ -64,7 +66,11 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         isShown = false
         rightAnswerPlacement = 0
         
-        chanceAnswer = 3
+        if UserDefaults.standard.bool(forKey: "isDifficultModeOn") == true
+        {
+            difficultLevel = 1
+        }
+        
         score = 0
         isGameEnd = false
         
@@ -82,7 +88,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         options = [[],[],[],[]]
         isShown = false
         rightAnswerPlacement = 0
-        chanceAnswer = 3
+        chanceAnswer = difficultLevel
         score = 0
         
         if isGameEnd == false
@@ -110,7 +116,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 option4.backgroundColor = UIColor.lightGray
                 
                 score = 0
-                chanceAnswer = 3
+                chanceAnswer = difficultLevel
                 
                 //Run lyrics and options
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.showLyrics), userInfo: nil, repeats: true)
@@ -179,7 +185,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                     if lyrics_text2[index_question2].contains("____")
                     {
                         isQuestion = true
-                        chanceAnswer = 3
+                        chanceAnswer = difficultLevel
                         print("DEBGU: Question")
                     }
                     else
@@ -346,7 +352,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             option3.backgroundColor = UIColor.lightGray
             option4.backgroundColor = UIColor.lightGray
             sender.backgroundColor = UIColor.green
-            chanceAnswer = 3
+            chanceAnswer = difficultLevel
         }
         else
         {
@@ -363,7 +369,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 option2.backgroundColor = UIColor.lightGray
                 option3.backgroundColor = UIColor.lightGray
                 option4.backgroundColor = UIColor.lightGray
-                chanceAnswer = 3
+                chanceAnswer = difficultLevel
             }
             else
             {
