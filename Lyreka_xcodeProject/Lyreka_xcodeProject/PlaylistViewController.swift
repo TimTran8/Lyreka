@@ -79,6 +79,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
 //        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PlaylistCell
         cell.textLabel?.text = songs[indexPath.row]
+        cell.textLabel?.textAlignment = .center
 //        cell.highScore_label.text = String(highScores[indexPath.row])
         return cell
     }

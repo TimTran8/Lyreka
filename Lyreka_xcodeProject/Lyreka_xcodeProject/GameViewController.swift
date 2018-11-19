@@ -340,7 +340,15 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             print("DEBUG: Correct")
             isQuestion = false
             
-            score = score + chanceAnswer
+            if difficultLevel == 1
+            {
+                score = score + chanceAnswer + 3
+            }
+            else
+            {
+                score = score + chanceAnswer
+            }
+            
             
             option1.isEnabled = false
             option2.isEnabled = false

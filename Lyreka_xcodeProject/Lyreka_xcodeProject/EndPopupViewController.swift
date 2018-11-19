@@ -43,7 +43,7 @@ class EndPopupViewController: UIViewController {
         songName.text = songs[index_currentSong]
         //Get and change score
         self.view.backgroundColor = UIColor(red: 128/255.0, green: 128/255.0, blue: 128/255.0, alpha: 0.8)
-        scoreLabel.text = "Score: " + String(score)
+        scoreLabel.text = "   Score: " + String(score)
         
         if UserDefaults.standard.string(forKey: "email") != nil
         {

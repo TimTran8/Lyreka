@@ -78,5 +78,10 @@ class PopupViewController: UIViewController {
         
     }
     
+    
 
+    @IBAction func back2Option(_ sender: UIButton) {
+        self.view.removeFromSuperview()
+    }
+    
 }
