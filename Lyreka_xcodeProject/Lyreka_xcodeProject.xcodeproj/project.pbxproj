@@ -12,7 +12,6 @@
 		4B62978021838C060049E074 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62977F21838C060049E074 /* AppDelegate.swift */; };
 		4B62978521838C060049E074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978321838C060049E074 /* Main.storyboard */; };
 		4B62978721838C070049E074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978621838C070049E074 /* Assets.xcassets */; };
-		4B62978A21838C070049E074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B62978821838C070049E074 /* LaunchScreen.storyboard */; };
 		4B62979221838C9F0049E074 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62979121838C9F0049E074 /* MainViewController.swift */; };
 		4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62979321838FD60049E074 /* PlaylistViewController.swift */; };
 		4B769DD92190E5B6000CD354 /* My Heart Will Go On.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B769DD82190E5B6000CD354 /* My Heart Will Go On.mp3 */; };
@@ -58,7 +57,6 @@
 		4B62977F21838C060049E074 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B62978421838C060049E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B62978621838C070049E074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4B62978921838C070049E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B62978B21838C070049E074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B62979121838C9F0049E074 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4B62979321838FD60049E074 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 				4B2504FF21A239CC00638B3E /* OnlineSongsViewController.swift */,
 				4B62978321838C060049E074 /* Main.storyboard */,
 				4B62978621838C070049E074 /* Assets.xcassets */,
-				4B62978821838C070049E074 /* LaunchScreen.storyboard */,
 				4B62978B21838C070049E074 /* Info.plist */,
 				4BD8476E2186443900263029 /* songs */,
 			);
@@ -259,7 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B62978A21838C070049E074 /* LaunchScreen.storyboard in Resources */,
 				4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */,
 				4B769DD92190E5B6000CD354 /* My Heart Will Go On.mp3 in Resources */,
 				4B769DDD2190E95A000CD354 /* My Heart Will Go On.lrc in Resources */,
@@ -322,14 +318,6 @@
 				4B62978421838C060049E074 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4B62978821838C070049E074 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B62978921838C070049E074 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

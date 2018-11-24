@@ -142,6 +142,9 @@
                                 <state key="normal" title="Online Song Library" backgroundImage="light_wood_button">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="zdz-7g-GY9" kind="show" id="TSp-HW-ofX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks6-3V-uHT">
                                 <rect key="frame" x="492" y="207" width="150" height="60"/>
@@ -257,7 +260,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_online" rowHeight="49" id="oWG-jO-EZY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_online2" rowHeight="49" id="oWG-jO-EZY">
                                         <rect key="frame" x="0.0" y="28" width="667" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oWG-jO-EZY" id="4Qj-N9-PdR">
@@ -266,6 +269,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zdz-7g-GY9" id="wvA-Yd-1UW"/>
+                                    <outlet property="delegate" destination="zdz-7g-GY9" id="eHD-nP-m4d"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zUs-Sb-Wge">
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
@@ -285,13 +292,13 @@
                         <viewLayoutGuide key="safeArea" id="VLB-ZI-tJD"/>
                     </view>
                     <connections>
-                        <outlet property="myTableView" destination="PmW-n7-O7x" id="ZQj-o6-Yv0"/>
+                        <outlet property="myTableView2" destination="PmW-n7-O7x" id="ae7-0I-JmF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGT-Sl-dBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bXy-tD-lmp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-513" y="1694"/>
+            <point key="canvasLocation" x="-539" y="1942"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="LD6-pH-Sd1">
