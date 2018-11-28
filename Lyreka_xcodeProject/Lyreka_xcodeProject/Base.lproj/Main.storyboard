@@ -155,6 +155,9 @@
                                 <state key="normal" title="Share Location" backgroundImage="light_wood_button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareLocation:" destination="WF8-FB-43l" eventType="touchUpInside" id="fRn-jx-uKI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sef-U6-uaf">
                                 <rect key="frame" x="492" y="130" width="150" height="59"/>

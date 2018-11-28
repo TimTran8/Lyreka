@@ -10,11 +10,13 @@
 //
 
 import UIKit
+import CoreLocation
 
-class OptionViewController: UIViewController {
+class OptionViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Variables
-
+    let lcManager = CLLocationManager()
+    
     @IBOutlet var themeButton: [UIButton]!
     @IBOutlet weak var enableDifficultMode: UISwitch!
     
@@ -99,6 +101,25 @@ class OptionViewController: UIViewController {
             print("DEBUG: Difficult mode is off")
             UserDefaults.standard.set(false, forKey: "isDifficultModeOn")
         }
+    }
+    
+    
+    
+    @IBAction func shareLocation(_ sender: UIButton) {
+        lcManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled()
+        {
+            lcManager.delegate = self
+            lcManager.desiredAccuracy = kCLLocationAccuracyBest
+//            lcManager.requestLocation()
+            lcManager.startUpdatingLocation()
+        }
+
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        print(location.coordinate)
     }
     
     //Function: browserSongDatabase

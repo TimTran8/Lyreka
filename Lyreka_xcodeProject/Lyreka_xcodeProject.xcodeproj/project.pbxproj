@@ -34,6 +34,7 @@
 		4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847702186443900263029 /* Fly Me To The Moon.mp3 */; };
 		4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847712186443900263029 /* Yesterday Once More.mp3 */; };
 		4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8477721867C5300263029 /* EndPopupViewController.swift */; };
+		4BE9648E21AF506100201DD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE9648D21AF506100201DD4 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		4BD847702186443900263029 /* Fly Me To The Moon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fly Me To The Moon.mp3"; sourceTree = "<group>"; };
 		4BD847712186443900263029 /* Yesterday Once More.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Yesterday Once More.mp3"; sourceTree = "<group>"; };
 		4BD8477721867C5300263029 /* EndPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPopupViewController.swift; sourceTree = "<group>"; };
+		4BE9648D21AF506100201DD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE9648E21AF506100201DD4 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +111,7 @@
 			children = (
 				4B62977E21838C060049E074 /* Lyreka_xcodeProject */,
 				305859A2218FC236000C5806 /* Lyreka_xcodeProjectUITests */,
+				4BE9648C21AF506100201DD4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +162,14 @@
 				4B8D8B8E21A0B75B00B0E851 /* 5 second song.mp3 */,
 			);
 			path = songs;
+			sourceTree = "<group>";
+		};
+		4BE9648C21AF506100201DD4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BE9648D21AF506100201DD4 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
