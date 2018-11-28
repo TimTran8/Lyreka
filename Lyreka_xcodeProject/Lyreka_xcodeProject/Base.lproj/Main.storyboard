@@ -256,7 +256,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PmW-n7-O7x">
-                                <rect key="frame" x="0.0" y="84" width="667" height="291"/>
+                                <rect key="frame" x="0.0" y="131" width="667" height="244"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -287,6 +287,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unW-bY-dpX">
+                                <rect key="frame" x="20" y="49" width="127" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Check(debug use)"/>
+                                <connections>
+                                    <action selector="check:" destination="zdz-7g-GY9" eventType="touchUpInside" id="mkA-pO-nQq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="VLB-ZI-tJD"/>
@@ -298,7 +306,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGT-Sl-dBP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bXy-tD-lmp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-539" y="1942"/>
+            <point key="canvasLocation" x="-539.28035982008998" y="1941.5999999999999"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="LD6-pH-Sd1">

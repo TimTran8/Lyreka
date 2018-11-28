@@ -118,16 +118,26 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 score = 0
                 chanceAnswer = difficultLevel
                 
-                //Run lyrics and options
-                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.showLyrics), userInfo: nil, repeats: true)
+//                //Run lyrics and options
+//                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.showLyrics), userInfo: nil, repeats: true)
                 
                 //Play Song
-                let audioPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".mp3")
-                try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath!) as URL)
+//                let audioPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".mp3")
+                let audioPath = songsPath[index_currentSong]
+                print(songs[index_currentSong])
+                let audioURL = NSURL(string: audioPath)! as URL
+                print(audioPath)
+//                try audioPlayer = AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: audioPath) as URL)
+                try audioPlayer = AVAudioPlayer(contentsOf: audioURL)
                 audioPlayer.delegate = self
                 songDuration = audioPlayer.duration
                 songName.text = songs[index_currentSong]
+                audioPlayer.volume = 1.0
+                audioPlayer.prepareToPlay()
                 audioPlayer.play()
+                
+                //Run lyrics and options
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.showLyrics), userInfo: nil, repeats: true)
                 
             }
             catch
@@ -246,6 +256,12 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         print("DEBUG: Loading Lyrics...")
         let lrcPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".lrc")
         let filemgr = FileManager.default
+        
+        if lrcPath == nil
+        {
+            print("DEBUG: this song does not have the lyrics")
+            return
+        }
         
         if filemgr.fileExists(atPath: lrcPath!)
         {

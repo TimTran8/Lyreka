@@ -16,9 +16,11 @@ import AVFoundation
 
 //MARK: Globle variables
 var songs:[String] = [] //Store the song names from the local library
+var songsPath:[String] = [] //Strore the .mp3 file path
 var index_currentSong = 0 //The index of the song selected in the songs[]
 var audioPlayer = AVAudioPlayer() //The audioPlayer to play the song selected
-var currentPlayingTime = audioPlayer.currentTime //Read the current timestamp when song is being played
+//var currentPlayingTime = audioPlayer.currentTime //Read the current timestamp when song is being played
+var currentPlayingTime = TimeInterval.init()
 var songDuration = audioPlayer.duration //Read the total duration of the song
 
 //var highScores:[Int] = [] //Store the high score for each song in the playlist
@@ -29,6 +31,7 @@ var isGameEnd = false //Set true when the song ends
 func playlistSync()
 {
     UserDefaults.standard.set(songs, forKey: "myPlaylist")
+    UserDefaults.standard.set(songsPath, forKey: "mySongsPath")
 //    UserDefaults.standard.set(highScores, forKey: "myHighScores")
     print("DEBUG: Sync Done")
 }
@@ -108,7 +111,9 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     {
         if editingStyle == .delete
         {
+            deleteSong(index: indexPath.row)
             songs.remove(at: indexPath.row)
+            songsPath.remove(at: indexPath.row)
 //            highScores.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .bottom)
             playlistSync()
@@ -121,8 +126,11 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let tmp = songs[sourceIndexPath.row]
+        let tmp_path = songsPath[sourceIndexPath.row]
         songs.remove(at: sourceIndexPath.row)
+        songsPath.remove(at: sourceIndexPath.row)
         songs.insert(tmp, at: destinationIndexPath.row)
+        songsPath.insert(tmp_path, at: destinationIndexPath.row)
         
 //        let tmp2 = highScores[sourceIndexPath.row]
 //        highScores.remove(at: sourceIndexPath.row)
@@ -163,24 +171,28 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     func gettingSongName()
     {
         songs = UserDefaults.standard.array(forKey: "myPlaylist") as? [String] ?? [String]()
+        songsPath = UserDefaults.standard.array(forKey: "mySongsPath") as? [String] ?? [String]()
 //        highScores = UserDefaults.standard.array(forKey: "myHighScores") as? [Int] ?? [Int]()
         if songs.isEmpty == false
         {
             return
         }
         
-        let folderURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
+        let localFolderURL = URL(fileURLWithPath: Bundle.main.resourcePath!)
+        let downloadedFileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         
         do
         {
-            let songPath = try FileManager.default.contentsOfDirectory(at: folderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-            
+            let songPath = try FileManager.default.contentsOfDirectory(at: localFolderURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
             for song in songPath
             {
                 var mySong = song.absoluteString
                 
                 if mySong.contains(".mp3")
                 {
+                    print("DEBUG: Adding song to playlist: " + mySong)
+                    songsPath.append(mySong)
+                    print("DEBUG: SongPath[0] = %@", songsPath[0])
                     let findString = mySong.components(separatedBy: "/")
                     mySong = findString[findString.count - 1]
                     mySong = mySong.replacingOccurrences(of: "%20", with: " ")
@@ -188,6 +200,26 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
                     songs.append(mySong)
                     
 //                    highScores.append(0)
+                }
+            }
+            
+            let songPath2 = try FileManager.default.contentsOfDirectory(at: downloadedFileURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            for song2 in songPath2
+            {
+                print(song2)
+                var mySong = song2.absoluteString
+
+                if mySong.contains(".mp3")
+                {
+                    songsPath.append(mySong)
+                    print(mySong)
+                    let findString = mySong.components(separatedBy: "/")
+                    mySong = findString[findString.count - 1]
+                    mySong = mySong.replacingOccurrences(of: "%20", with: " ")
+                    mySong = mySong.replacingOccurrences(of: ".mp3", with: "")
+                    songs.append(mySong)
+
+                    //                    highScores.append(0)
                 }
             }
             playlistSync()
@@ -199,7 +231,18 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    
+    func deleteSong(index: Int)
+    {
+        let filePath = songsPath[index]
+        let fileURL = NSURL(string: filePath)! as URL
+        print("DEBUG: Deleting \(fileURL)")
+        do
+        {
+            try FileManager.default.removeItem(at: fileURL)
+        } catch {
+            print("Could not delete the file: \(error)")
+        }
+    }
 
     
     //Function: playSong(_ sender: UIButton)
