@@ -35,6 +35,11 @@
 		4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847712186443900263029 /* Yesterday Once More.mp3 */; };
 		4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8477721867C5300263029 /* EndPopupViewController.swift */; };
 		4BE9648E21AF506100201DD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE9648D21AF506100201DD4 /* CoreLocation.framework */; };
+		D1E336A621AFA8650016CDDC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E336A521AFA8650016CDDC /* Theme.swift */; };
+		D1E336A821AFA9380016CDDC /* AlexBrush-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */; };
+		D1E336AA21AFAE5A0016CDDC /* MixStitch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336A921AFAE590016CDDC /* MixStitch.ttf */; };
+		D1E336AE21AFB18F0016CDDC /* SmokeInTheWoodsDEMO.otf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336AD21AFB18F0016CDDC /* SmokeInTheWoodsDEMO.otf */; };
+		D1E336B021AFB5720016CDDC /* DJB Hand Stitched Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336AF21AFB5720016CDDC /* DJB Hand Stitched Font.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +81,11 @@
 		4BD847712186443900263029 /* Yesterday Once More.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Yesterday Once More.mp3"; sourceTree = "<group>"; };
 		4BD8477721867C5300263029 /* EndPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPopupViewController.swift; sourceTree = "<group>"; };
 		4BE9648D21AF506100201DD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D1E336A521AFA8650016CDDC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlexBrush-Regular.ttf"; sourceTree = "<group>"; };
+		D1E336A921AFAE590016CDDC /* MixStitch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MixStitch.ttf; sourceTree = "<group>"; };
+		D1E336AD21AFB18F0016CDDC /* SmokeInTheWoodsDEMO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SmokeInTheWoodsDEMO.otf; sourceTree = "<group>"; };
+		D1E336AF21AFB5720016CDDC /* DJB Hand Stitched Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DJB Hand Stitched Font.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +138,7 @@
 		4B62977E21838C060049E074 /* Lyreka_xcodeProject */ = {
 			isa = PBXGroup;
 			children = (
+				D1E336A421AFA8090016CDDC /* UI_Resources */,
 				4B62977D21838C060049E074 /* Products */,
 				4B62979121838C9F0049E074 /* MainViewController.swift */,
 				4BB0FF112183AD9A00DA380F /* OptionViewController.swift */,
@@ -170,6 +181,18 @@
 				4BE9648D21AF506100201DD4 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1E336A421AFA8090016CDDC /* UI_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D1E336AF21AFB5720016CDDC /* DJB Hand Stitched Font.ttf */,
+				D1E336AD21AFB18F0016CDDC /* SmokeInTheWoodsDEMO.otf */,
+				D1E336A921AFAE590016CDDC /* MixStitch.ttf */,
+				D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */,
+				D1E336A521AFA8650016CDDC /* Theme.swift */,
+			);
+			path = UI_Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,16 +286,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1E336B021AFB5720016CDDC /* DJB Hand Stitched Font.ttf in Resources */,
 				4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */,
 				4B769DD92190E5B6000CD354 /* My Heart Will Go On.mp3 in Resources */,
 				4B769DDD2190E95A000CD354 /* My Heart Will Go On.lrc in Resources */,
 				4B62978721838C070049E074 /* Assets.xcassets in Resources */,
+				D1E336AA21AFAE5A0016CDDC /* MixStitch.ttf in Resources */,
 				4B62978521838C060049E074 /* Main.storyboard in Resources */,
 				4B8D8B8F21A0B75B00B0E851 /* 5 second alarm.mp3 in Resources */,
 				4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */,
 				4BC81C73218B7C030048E8AF /* Fly Me To The Moon.lrc in Resources */,
 				4BC81C75218BB8690048E8AF /* Yesterday Once More.lrc in Resources */,
 				4B8D8B9521A0B75B00B0E851 /* 5 second song.mp3 in Resources */,
+				D1E336AE21AFB18F0016CDDC /* SmokeInTheWoodsDEMO.otf in Resources */,
+				D1E336A821AFA9380016CDDC /* AlexBrush-Regular.ttf in Resources */,
 				4B8D8B9C21A0BD2D00B0E851 /* 5 second alarm.lrc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +327,7 @@
 				4BD8476B2186300F00263029 /* PausePopupViewController.swift in Sources */,
 				4B25050021A239CC00638B3E /* OnlineSongsViewController.swift in Sources */,
 				4BB0FF122183AD9A00DA380F /* OptionViewController.swift in Sources */,
+				D1E336A621AFA8650016CDDC /* Theme.swift in Sources */,
 				4B62979221838C9F0049E074 /* MainViewController.swift in Sources */,
 				4B62979421838FD70049E074 /* PlaylistViewController.swift in Sources */,
 				4BD8476921862EB800263029 /* GameViewController.swift in Sources */,

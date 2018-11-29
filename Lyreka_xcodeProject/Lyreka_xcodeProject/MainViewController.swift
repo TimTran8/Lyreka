@@ -11,8 +11,12 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
     //MARK: Variables
+    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var Play: UIButton!
+    @IBOutlet weak var Settings: UIButton!
+    @IBOutlet weak var Exit: UIButton!
     
     //Force landscape
     
@@ -31,11 +35,34 @@ class MainViewController: UIViewController {
     
     //MARK: Functions
     
+    override func awakeFromNib() {
+        //print(Theme.titleFontName)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
+        
+        if UIFont(name: Theme.titleFontName, size: 80) != nil {
+            mainTitle.font = UIFont(name: Theme.titleFontName, size: 80)
+        }
+        else{print("--- font error ---")
+            for name in UIFont.familyNames
+            {
+                print(name)
+            }
+        }
+        if UIFont(name: Theme.mainFontName, size: 42) != nil {
+            Play.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 42)
+        }
+        if UIFont(name: Theme.mainFontName, size: 42) != nil {
+            Settings.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
+        }
+        if UIFont(name: Theme.mainFontName, size: 42) != nil {
+            Exit.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
+        }
     }
     
     override func didReceiveMemoryWarning() {

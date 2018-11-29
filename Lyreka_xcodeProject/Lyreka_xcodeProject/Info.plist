@@ -31,6 +31,13 @@
 	<string>Main</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Do you allow Lyreka to access your location?</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AlexBrush-Regular.ttf</string>
+		<string>MixStitch.ttf</string>
+		<string>SmokeInTheWoodsDEMO.otf</string>
+		<string>DJB Hand Stitched Font.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
