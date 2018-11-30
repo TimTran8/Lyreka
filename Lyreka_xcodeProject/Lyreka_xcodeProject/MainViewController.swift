@@ -13,10 +13,12 @@ import UIKit
 class MainViewController: UIViewController {
     
     //MARK: Variables
-    @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var Play: UIButton!
     @IBOutlet weak var Settings: UIButton!
     @IBOutlet weak var Exit: UIButton!
+    @IBOutlet weak var stackView: UIStackView!
     
     //Force landscape
     
@@ -39,23 +41,21 @@ class MainViewController: UIViewController {
         //print(Theme.titleFontName)
     }
     
+//    override func viewWillTransition(to size:CGSize, with coordinator: UIViewControllerTransitionCoordinator){
+//        super.viewWillTransition(to: size, with: coordinator)
+//        DispatchQueue.main.async {
+//            self.logo.frame = CGRect(x: 20 * UIScreen.main.bounds.width/100, y: 5 * UIScreen.main.bounds.height/100, width: 40 * UIScreen.main.bounds.width/100, height: 90 * UIScreen.main.bounds.height/100)
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
         
-        if UIFont(name: Theme.titleFontName, size: 80) != nil {
-            mainTitle.font = UIFont(name: Theme.titleFontName, size: 80)
-        }
-        else{print("--- font error ---")
-            for name in UIFont.familyNames
-            {
-                print(name)
-            }
-        }
         if UIFont(name: Theme.mainFontName, size: 42) != nil {
-            Play.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 42)
+            Play.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 52)
         }
         if UIFont(name: Theme.mainFontName, size: 42) != nil {
             Settings.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
@@ -63,7 +63,27 @@ class MainViewController: UIViewController {
         if UIFont(name: Theme.mainFontName, size: 42) != nil {
             Exit.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
         }
+        
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
+        
+        Play.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
+        Settings.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        Exit.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+//        logo.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(logo)
+        logo.image = UIImage(named: Theme.logo)!
+        logo.contentMode = UIViewContentMode.scaleAspectFit
+//        logo.frame = CGRect(x: 20 * UIScreen.main.bounds.width/100, y: 5 * UIScreen.main.bounds.height/100, width: 40 * UIScreen.main.bounds.width/100, height: 90 * UIScreen.main.bounds.height/100)
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

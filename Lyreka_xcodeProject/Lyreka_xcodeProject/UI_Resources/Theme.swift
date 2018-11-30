@@ -11,8 +11,9 @@ import UIKit
 
 class Theme {
     static let titleFontName = "SmokeInTheWoods"
-    static let mainFontName = "Times New Roman"
-    static let bigButton = "temp1"
-    static let smallButton = "temp2"
-    static let mainBackground = "temp3"
+    static let mainFontName = "SmokeInTheWoods"
+    static let bigButton = "wood_big_button"
+    static let smallButton = "wood_small_button"
+    static let mainBackground = "background_walnut"
+    static let logo = "wood_burnt_logo"
 }
