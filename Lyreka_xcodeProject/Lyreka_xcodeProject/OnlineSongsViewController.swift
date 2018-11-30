@@ -187,7 +187,8 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
 //        }
         
         //check lyrics exist
-        let lyricsFileName = "Bohemian Rhapsody.lrc"
+//        let lyricsFileName = "Bohemian Rhapsody.lrc"
+        let lyricsFileName = "Fly Me To The Moon.lrc"
         let lrcURL = docDirURL.appendingPathComponent(lyricsFileName)
         if FileManager.default.fileExists(atPath: lrcURL.path)
         {
@@ -210,6 +211,8 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         {
             let fullText = try String(contentsOfFile: lrcURL.path, encoding: .utf8)
             print(fullText)
+//            let output = parse_lyrics(input: fullText)
+//            print(output)
         }
         catch { print("DEBUG: Failed to read lyrics") }
 
@@ -347,8 +350,10 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 }
                 
                 guard let data = data else{return}
-                let outputStr  = String(data: data, encoding: String.Encoding.utf8) as String!
-//                print(outputStr!)
+                let rowLyrics  = String(data: data, encoding: String.Encoding.utf8)! as String
+                print(rowLyrics)
+                let outputLyrics = self.parse_lyrics(input: rowLyrics)
+                
                 
                 let docDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
                 let lrcFileName = songName.replacingOccurrences(of: "%20", with: " ") + ".lrc"
@@ -356,7 +361,8 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 print("DEBUG: Download lyrics to: %@", desURL)
                 do
                 {
-                    try data.write(to: desURL)
+                    try outputLyrics.write(to: desURL, atomically: false, encoding: .utf8)
+//                    try data.write(to: desURL)
                 }catch { print("ERROR: Writing file: \(error)") }
                 
                 
@@ -367,6 +373,52 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         task.resume()
 
         
+    }
+    
+    
+    func parse_lyrics(input:String)->String
+    {
+        var result = ""
+        print("DEBUG: Parsing lyrics...")
+        
+        var full_text = input.components(separatedBy: "\n")
+        
+        for i in 0..<full_text.count
+        {
+            if full_text[i].contains("[0")
+            {
+//                if full_text[i].contains("][")
+//                {
+//                    let start = full_text[i].lastIndex(of: "[")
+//                    let end = full_text[i].lastIndex(of: "]")
+//                    full_text[i] = full_text[i].replaceSubrange(start!..<end!, with: "")
+//                }
+                var line = full_text[i]
+                line = line.replacingOccurrences(of: "[", with: "")
+                line = line.replacingOccurrences(of: "]", with: "\t")
+                
+                let line_components = line.components(separatedBy: "\t")
+                let timestamp_line = line_components[0]
+                var lyrics_str = line_components[1]
+                
+                
+                line = ""
+                //Parse timestamp
+                let timestamp_str = timestamp_line.components(separatedBy: ":")
+                let timestamp_float = Float(timestamp_str[0])! * 60.0 + Float(timestamp_str[1])!
+                line += String(timestamp_float) + "\t"
+                //Parse lyrics
+                lyrics_str += "\ta\tb\tc\td\n"
+                line += lyrics_str
+                //Output timestamp and lyrics in this line
+                result += line
+            }
+        }
+        
+        
+        
+        
+        return result;
     }
     
     

@@ -235,10 +235,16 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     {
         let filePath = songsPath[index]
         let fileURL = NSURL(string: filePath)! as URL
-        print("DEBUG: Deleting \(fileURL)")
+        var lrcPath = songsPath[index]
+        lrcPath = lrcPath.replacingOccurrences(of: ".mp3", with: ".lrc")
+        let lrcURL = NSURL(string: lrcPath)! as URL
+        
         do
         {
+            print("DEBUG: Deleting \(fileURL)")
             try FileManager.default.removeItem(at: fileURL)
+            print("DEBUG: Deleting \(lrcURL)")
+            try FileManager.default.removeItem(at: lrcURL)
         } catch {
             print("Could not delete the file: \(error)")
         }

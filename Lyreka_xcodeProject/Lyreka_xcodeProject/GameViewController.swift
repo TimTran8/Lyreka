@@ -254,24 +254,37 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     func loadLyrics()
     {
         print("DEBUG: Loading Lyrics...")
-        let lrcPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".lrc")
-        let filemgr = FileManager.default
+//        let lrcPath = Bundle.main.path(forResource: songs[index_currentSong], ofType: ".lrc")
+//        let filemgr = FileManager.default
+//
+//        if lrcPath == nil
+//        {
+//            print("DEBUG: this song does not have the lyrics")
+//            return
+//        }
+        var lrcPath = songsPath[index_currentSong]
+        lrcPath = lrcPath.replacingOccurrences(of: ".mp3", with: ".lrc")
+        lrcPath = lrcPath.replacingOccurrences(of: "%20", with: " ")
+        lrcPath = lrcPath.replacingOccurrences(of: "file://", with: "")
         
-        if lrcPath == nil
-        {
-            print("DEBUG: this song does not have the lyrics")
-            return
-        }
         
-        if filemgr.fileExists(atPath: lrcPath!)
+//        let lrcPath = NSURL(string: lyricsPath)! as URL
+        print(lrcPath)
+        
+//        if filemgr.fileExists(atPath: lrcPath!)
+        if FileManager.default.fileExists(atPath: lrcPath)
         {
             do
             {
-                let fullText = try String(contentsOfFile: lrcPath!, encoding: .utf8)
+                let fullText = try String(contentsOfFile: lrcPath, encoding: .utf8)
                 let readings = fullText.components(separatedBy: "\n")
                 
                 for i in 0..<readings.count
                 {
+                    if readings[i].contains("\t") == false
+                    {
+                        continue
+                    }
                     let row = readings[i].components(separatedBy: "\t")
                     
 
@@ -296,7 +309,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
         else
         {
-            print("ERROR: .lrc file not found")
+            print("DEBUG: .lrc file not found")
         }
     }
     
