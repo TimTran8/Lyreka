@@ -54,7 +54,7 @@
                                         <rect key="frame" x="162" y="138" width="100" height="58"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Exit" backgroundImage="light_wood_button">
+                                        <state key="normal" title="Exit" backgroundImage="wood_small_button">
                                             <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         </state>
                                         <connections>
@@ -79,13 +79,6 @@
                                     <constraint firstAttribute="width" constant="282" id="mH4-V0-U9D"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lyreca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzx-EN-pfw">
-                                <rect key="frame" x="121" y="83" width="230" height="109"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.95604798136592095" green="1" blue="0.98508575955909716" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -103,7 +96,6 @@
                         <outlet property="Exit" destination="JND-7D-qmM" id="eEz-Q7-KKg"/>
                         <outlet property="Play" destination="RFY-xS-ke9" id="5jK-UO-wiT"/>
                         <outlet property="Settings" destination="Zuf-dN-5Zl" id="q7G-8M-g3i"/>
-                        <outlet property="mainTitle" destination="Qzx-EN-pfw" id="a1b-YM-IK7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -979,5 +971,6 @@
         <image name="light_wood_button" width="578" height="236"/>
         <image name="light_wood_top_bar" width="2200" height="88"/>
         <image name="solid-dark-wood-grain-texture-free" width="2700" height="1700"/>
+        <image name="wood_small_button" width="85" height="43"/>
     </resources>
 </document>

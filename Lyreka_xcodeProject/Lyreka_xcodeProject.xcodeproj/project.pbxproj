@@ -35,6 +35,7 @@
 		4BD847742186443900263029 /* Yesterday Once More.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD847712186443900263029 /* Yesterday Once More.mp3 */; };
 		4BD8477821867C5300263029 /* EndPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD8477721867C5300263029 /* EndPopupViewController.swift */; };
 		4BE9648E21AF506100201DD4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE9648D21AF506100201DD4 /* CoreLocation.framework */; };
+		D146384D21B0F10D003CAA69 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D146384C21B0F10D003CAA69 /* Images.xcassets */; };
 		D1E336A621AFA8650016CDDC /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E336A521AFA8650016CDDC /* Theme.swift */; };
 		D1E336A821AFA9380016CDDC /* AlexBrush-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */; };
 		D1E336AA21AFAE5A0016CDDC /* MixStitch.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1E336A921AFAE590016CDDC /* MixStitch.ttf */; };
@@ -81,6 +82,7 @@
 		4BD847712186443900263029 /* Yesterday Once More.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Yesterday Once More.mp3"; sourceTree = "<group>"; };
 		4BD8477721867C5300263029 /* EndPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPopupViewController.swift; sourceTree = "<group>"; };
 		4BE9648D21AF506100201DD4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D146384C21B0F10D003CAA69 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D1E336A521AFA8650016CDDC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AlexBrush-Regular.ttf"; sourceTree = "<group>"; };
 		D1E336A921AFAE590016CDDC /* MixStitch.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MixStitch.ttf; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				D1E336A921AFAE590016CDDC /* MixStitch.ttf */,
 				D1E336A721AFA9380016CDDC /* AlexBrush-Regular.ttf */,
 				D1E336A521AFA8650016CDDC /* Theme.swift */,
+				D146384C21B0F10D003CAA69 /* Images.xcassets */,
 			);
 			path = UI_Resources;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E336B021AFB5720016CDDC /* DJB Hand Stitched Font.ttf in Resources */,
+				D146384D21B0F10D003CAA69 /* Images.xcassets in Resources */,
 				4BD847732186443900263029 /* Fly Me To The Moon.mp3 in Resources */,
 				4B769DD92190E5B6000CD354 /* My Heart Will Go On.mp3 in Resources */,
 				4B769DDD2190E95A000CD354 /* My Heart Will Go On.lrc in Resources */,
