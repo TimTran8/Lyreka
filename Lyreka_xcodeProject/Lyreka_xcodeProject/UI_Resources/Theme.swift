@@ -18,4 +18,6 @@ class Theme {
     static let logo = "wood_burnt_logo"
     static let titleFontColor = UIColor.black
     static let mainFontColor = UIColor.black
+    static let tableTop = "wood_walnut_bar"
+    static let cellBackground = "wood_light_bar"
 }

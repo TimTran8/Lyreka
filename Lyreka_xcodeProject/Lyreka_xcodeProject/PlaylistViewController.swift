@@ -44,8 +44,10 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     //Variable: myTableView
     //Description: The table view will show the playlist with the song names
     @IBOutlet weak var myTableView: UITableView!
-    
-    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var edit_button: UIButton!
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var header_background: UIImageView!
+    @IBOutlet weak var choose_a_song: UILabel!
     
     
     //Force landscape
@@ -150,7 +152,23 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         isGameEnd = false
         
         print("DEBUG: Playlist view loaded")
- 
+        
+        header_background.image = UIImage(named: Theme.tableTop)
+        
+        choose_a_song.font = UIFont(name: Theme.titleFontName, size: 62)
+        choose_a_song.textAlignment = .center
+        
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            edit_button.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        edit_button.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
+        edit_button.titleLabel?.textColor = Theme.mainFontColor
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            back.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        back.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
+        back.titleLabel?.textColor = Theme.mainFontColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -265,13 +283,13 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         if myTableView.isEditing == false
         {
             myTableView.isEditing = true
-            editButton.setTitle("Done", for: .normal)
+            edit_button.setTitle("Done", for: .normal)
             
         }
         else
         {
             myTableView.isEditing = false
-            editButton.setTitle("Edit", for: .normal)
+            edit_button.setTitle("Edit", for: .normal)
         }
     }
     

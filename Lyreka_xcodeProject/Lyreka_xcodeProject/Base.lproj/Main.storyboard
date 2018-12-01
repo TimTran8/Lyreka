@@ -678,31 +678,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-lQ-2ld">
-                                <rect key="frame" x="0.0" y="32" width="667" height="343"/>
+                                <rect key="frame" x="0.0" y="76.5" width="667" height="298.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="dSZ-Tr-kcr">
                                     <rect key="frame" x="0.0" y="0.0" width="667" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="solid-dark-wood-grain-texture-free" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-lc-JER">
-                                            <rect key="frame" x="0.0" y="-10" width="667" height="43"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Songs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df2-tl-gYS">
-                                            <rect key="frame" x="308" y="5" width="51.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="Df2-tl-gYS" firstAttribute="top" secondItem="dSZ-Tr-kcr" secondAttribute="top" constant="5" id="NRz-sl-hRo"/>
-                                        <constraint firstItem="4Gy-lc-JER" firstAttribute="leading" secondItem="dSZ-Tr-kcr" secondAttribute="leading" id="Ns9-Qv-IOS"/>
-                                        <constraint firstAttribute="bottom" secondItem="4Gy-lc-JER" secondAttribute="bottom" id="REf-Ud-38g"/>
-                                        <constraint firstItem="Df2-tl-gYS" firstAttribute="centerX" secondItem="dSZ-Tr-kcr" secondAttribute="centerX" id="VzB-4G-ePq"/>
-                                        <constraint firstItem="4Gy-lc-JER" firstAttribute="top" secondItem="dSZ-Tr-kcr" secondAttribute="top" id="mGF-HU-06O"/>
-                                        <constraint firstAttribute="trailing" secondItem="4Gy-lc-JER" secondAttribute="trailing" id="wf2-vy-TD7"/>
-                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="nZV-Zn-rkA" customClass="PlaylistCell" customModule="Lyreka_xcodeProject" customModuleProvider="target">
@@ -727,56 +708,66 @@
                                     <outlet property="delegate" destination="bZn-x8-R0I" id="5h2-Xx-5p0"/>
                                 </connections>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XzG-nR-OFY">
-                                <rect key="frame" x="0.0" y="0.0" width="667" height="32"/>
-                                <color key="backgroundColor" red="1" green="0.66274509803921566" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="Zp5-GF-j3t"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="PlayList" id="7rH-Is-gCL">
-                                        <barButtonItem key="leftBarButtonItem" id="XAr-xV-sgf">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eJu-0h-cx5">
-                                                <rect key="frame" x="20" y="1" width="59" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Edit"/>
-                                                <connections>
-                                                    <action selector="editPlaylist:" destination="bZn-x8-R0I" eventType="touchUpInside" id="zBg-nK-ImJ"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" id="rrb-a6-Fzf">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nBo-JO-IMp">
-                                                <rect key="frame" x="613" y="1" width="34" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Back"/>
-                                                <connections>
-                                                    <segue destination="kbQ-E2-z5z" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="htA-de-Pxc"/>
-                                                </connections>
-                                            </button>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wood_walnut_bar" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-lc-JER">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="76.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose a song!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df2-tl-gYS">
+                                <rect key="frame" x="306" y="20" width="52" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aip-Kr-NXl">
+                                <rect key="frame" x="66.5" y="19.5" width="67" height="37.5"/>
+                                <state key="normal" title="Back" backgroundImage="wood_small_button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kbQ-E2-z5z" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="fst-9V-mvI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQn-01-6Aq">
+                                <rect key="frame" x="533.5" y="19.5" width="67" height="37.5"/>
+                                <state key="normal" title="Edit" backgroundImage="wood_small_button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="editPlaylist:" destination="bZn-x8-R0I" eventType="touchUpInside" id="bgg-Ld-CvP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XzG-nR-OFY" firstAttribute="top" secondItem="Q8J-By-WzW" secondAttribute="top" id="AYd-1M-TEs"/>
+                            <constraint firstItem="aip-Kr-NXl" firstAttribute="width" secondItem="Q8J-By-WzW" secondAttribute="width" multiplier="0.1" id="8c5-Tt-Z63"/>
+                            <constraint firstItem="4Gy-lc-JER" firstAttribute="top" secondItem="GU7-Ln-eDE" secondAttribute="top" constant="20" symbolic="YES" id="D5L-Ze-SfL"/>
                             <constraint firstItem="GU7-Ln-eDE" firstAttribute="trailing" secondItem="1Er-lQ-2ld" secondAttribute="trailing" id="Icm-LM-UbB"/>
                             <constraint firstItem="1Er-lQ-2ld" firstAttribute="trailing" secondItem="GU7-Ln-eDE" secondAttribute="trailing" id="L9H-xB-oO8"/>
-                            <constraint firstItem="1Er-lQ-2ld" firstAttribute="top" secondItem="XzG-nR-OFY" secondAttribute="bottom" id="YCI-MV-Lrg"/>
+                            <constraint firstItem="1Er-lQ-2ld" firstAttribute="top" secondItem="4Gy-lc-JER" secondAttribute="bottom" id="P69-6k-Apy"/>
+                            <constraint firstItem="aip-Kr-NXl" firstAttribute="centerY" secondItem="4Gy-lc-JER" secondAttribute="centerY" id="PPi-xK-z2F"/>
+                            <constraint firstItem="wQn-01-6Aq" firstAttribute="trailing" secondItem="Q8J-By-WzW" secondAttribute="trailing" multiplier="0.9" id="T7R-85-vNp"/>
+                            <constraint firstItem="Df2-tl-gYS" firstAttribute="centerX" secondItem="GU7-Ln-eDE" secondAttribute="centerX" id="YPC-dd-gYX"/>
                             <constraint firstItem="1Er-lQ-2ld" firstAttribute="leading" secondItem="GU7-Ln-eDE" secondAttribute="leading" id="cpu-ze-1Ab"/>
                             <constraint firstItem="1Er-lQ-2ld" firstAttribute="leading" secondItem="GU7-Ln-eDE" secondAttribute="leading" id="dA7-m3-iRJ"/>
-                            <constraint firstItem="GU7-Ln-eDE" firstAttribute="trailing" secondItem="XzG-nR-OFY" secondAttribute="trailing" id="fyn-BI-zHS"/>
+                            <constraint firstItem="wQn-01-6Aq" firstAttribute="centerY" secondItem="aip-Kr-NXl" secondAttribute="centerY" id="dJo-dH-Yv5"/>
+                            <constraint firstItem="wQn-01-6Aq" firstAttribute="width" secondItem="aip-Kr-NXl" secondAttribute="width" id="eLJ-s6-47Y"/>
+                            <constraint firstItem="4Gy-lc-JER" firstAttribute="leading" secondItem="Q8J-By-WzW" secondAttribute="leading" id="erK-G3-bFs"/>
+                            <constraint firstItem="Df2-tl-gYS" firstAttribute="centerY" secondItem="4Gy-lc-JER" secondAttribute="centerY" id="lLn-vB-Tv0"/>
+                            <constraint firstItem="Df2-tl-gYS" firstAttribute="width" secondItem="4Gy-lc-JER" secondAttribute="width" multiplier="0.4" id="lzJ-HX-fDD"/>
                             <constraint firstAttribute="bottom" secondItem="1Er-lQ-2ld" secondAttribute="bottom" id="ngV-U6-c2a"/>
-                            <constraint firstItem="XzG-nR-OFY" firstAttribute="leading" secondItem="GU7-Ln-eDE" secondAttribute="leading" id="pgf-Vm-sLN"/>
+                            <constraint firstItem="aip-Kr-NXl" firstAttribute="leading" secondItem="Q8J-By-WzW" secondAttribute="trailing" multiplier="0.1" symbolic="YES" id="qfe-hV-fvd"/>
+                            <constraint firstItem="aip-Kr-NXl" firstAttribute="height" secondItem="Q8J-By-WzW" secondAttribute="height" multiplier="0.1" id="u09-f4-V7c"/>
+                            <constraint firstItem="wQn-01-6Aq" firstAttribute="height" secondItem="aip-Kr-NXl" secondAttribute="height" id="v3K-bt-BwU"/>
+                            <constraint firstItem="4Gy-lc-JER" firstAttribute="trailing" secondItem="Q8J-By-WzW" secondAttribute="trailing" id="wh7-bg-5Dc"/>
+                            <constraint firstItem="4Gy-lc-JER" firstAttribute="bottom" secondItem="Q8J-By-WzW" secondAttribute="bottom" multiplier="0.15" constant="20" symbolic="YES" id="xCZ-YM-RON"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GU7-Ln-eDE"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editButton" destination="eJu-0h-cx5" id="XY9-b2-Ndi"/>
+                        <outlet property="back" destination="aip-Kr-NXl" id="I4F-QZ-SRI"/>
+                        <outlet property="choose_a_song" destination="Df2-tl-gYS" id="6uW-aY-lqO"/>
+                        <outlet property="edit_button" destination="wQn-01-6Aq" id="uOY-Kt-xy3"/>
+                        <outlet property="header_background" destination="4Gy-lc-JER" id="KZE-uT-jxY"/>
                         <outlet property="myTableView" destination="1Er-lQ-2ld" id="XZd-rI-QAo"/>
                         <segue destination="zj7-6h-Apx" kind="presentation" identifier="startGame" id="u8G-mE-Dv2"/>
                     </connections>
@@ -962,5 +953,6 @@
         <image name="wood_big_button" width="198" height="84"/>
         <image name="wood_burnt_logo" width="1182" height="590"/>
         <image name="wood_small_button" width="85" height="43"/>
+        <image name="wood_walnut_bar" width="850" height="85"/>
     </resources>
 </document>
