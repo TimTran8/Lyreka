@@ -19,6 +19,14 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var themeButton: [UIButton]!
     @IBOutlet weak var enableDifficultMode: UISwitch!
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var enableDifficultImage: UIView!
+    @IBOutlet weak var enableDifficultLabel: UILabel!
+    @IBOutlet weak var onlineSongLibrary: UIButton!
+    @IBOutlet weak var selectTheme: UIButton!
+    @IBOutlet weak var singIn: UIButton!
+    @IBOutlet weak var shareLocation: UIButton!
     
     //Force landscape
     
@@ -40,6 +48,18 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
         
         enableDifficultMode.setOn(UserDefaults.standard.bool(forKey: "isDifficultModeOn"), animated: false)
         
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
+        
+        settingsLabel.font = UIFont(name: Theme.titleFontName, size: 62)
+        enableDifficultLabel.font = UIFont(name: Theme.titleFontName, size: 22)
     }
     
     override func didReceiveMemoryWarning() {
