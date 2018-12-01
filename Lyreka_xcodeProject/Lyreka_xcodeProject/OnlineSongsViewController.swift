@@ -381,7 +381,29 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         var result = ""
         print("DEBUG: Parsing lyrics...")
         
-        var full_text = input.components(separatedBy: "\n")
+//        let raw_input = input.replacingOccurrences(of: "][", with: "]\n[")
+//        var full_text = raw_input.components(separatedBy: "\n")
+//        full_text = full_text.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
+
+        var good_input = ""
+
+        var raw_input = input.components(separatedBy: "\n")
+        for i in 0..<raw_input.count
+        {
+            var tmp = raw_input[i]
+            if tmp.contains("][")
+            {
+                //Get the substring
+                let lyrics_index = tmp.lastIndex(of: "]")
+                let lyrics_tmp = tmp[(lyrics_index!)..<tmp.endIndex] + "\n"
+                tmp = tmp.replacingOccurrences(of: "]", with: lyrics_tmp)
+            }
+
+            good_input += tmp + "\n"
+        }
+
+        var full_text = good_input.components(separatedBy: "\n")
+        full_text = full_text.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
         
         for i in 0..<full_text.count
         {
