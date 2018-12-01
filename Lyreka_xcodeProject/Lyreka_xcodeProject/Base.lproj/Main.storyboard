@@ -170,7 +170,9 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ho-rM-JTa">
                                 <rect key="frame" x="41" y="20" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Back" backgroundImage="wood_small_button">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="oAc-R2-5lY" kind="unwind" unwindAction="unwindToMainViewControllerWithUnwindSegue:" id="cZF-Nn-ngZ"/>
                                 </connections>
@@ -203,6 +205,7 @@
                             <constraint firstItem="Ks6-3V-uHT" firstAttribute="centerX" secondItem="sef-U6-uaf" secondAttribute="centerX" id="S0p-Z1-Z9E"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="VA3-hm-qtJ"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="height" secondItem="sef-U6-uaf" secondAttribute="height" id="WNo-EI-m8O"/>
+                            <constraint firstItem="3t0-BU-yRC" firstAttribute="width" secondItem="otT-LP-bql" secondAttribute="width" multiplier="0.3" id="WuG-52-60F"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="centerX" secondItem="otT-LP-bql" secondAttribute="centerX" id="Zc7-Sv-N58"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="leading" secondItem="otT-LP-bql" secondAttribute="trailing" multiplier="0.1" id="bER-QP-3qg"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.45" id="e6j-J1-UH6"/>
@@ -210,6 +213,7 @@
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="top" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.1" id="mrR-i2-5Ee"/>
                             <constraint firstItem="1Dv-vG-Ffe" firstAttribute="centerX" secondItem="otT-LP-bql" secondAttribute="centerX" id="n6p-da-TyK"/>
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="width" secondItem="otT-LP-bql" secondAttribute="width" multiplier="0.1" id="nJc-Zi-Ut0"/>
+                            <constraint firstItem="3t0-BU-yRC" firstAttribute="height" secondItem="otT-LP-bql" secondAttribute="height" multiplier="0.2" id="naa-3N-v2g"/>
                             <constraint firstItem="Ks6-3V-uHT" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="v5a-Sq-wJ4"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="centerY" secondItem="Ks6-3V-uHT" secondAttribute="centerY" id="v5a-hj-AYC"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="vWG-2o-ZTg"/>
@@ -221,7 +225,9 @@
                         <viewLayoutGuide key="safeArea" id="3A1-uy-HBL"/>
                     </view>
                     <connections>
+                        <outlet property="back" destination="4ho-rM-JTa" id="0Zj-Kp-e0x"/>
                         <outlet property="bg" destination="otT-LP-bql" id="kOF-lE-7Cp"/>
+                        <outlet property="center_toggle_image" destination="w1v-it-syA" id="48H-6b-UoD"/>
                         <outlet property="enableDifficultImage" destination="vCl-gk-6vg" id="WSz-sq-TUo"/>
                         <outlet property="enableDifficultLabel" destination="6C1-PS-7JV" id="bDJ-8B-Z5i"/>
                         <outlet property="enableDifficultMode" destination="1Dv-vG-Ffe" id="zjT-au-TMV"/>
@@ -229,7 +235,7 @@
                         <outlet property="selectTheme" destination="icz-7e-9DU" id="XGn-F9-AFw"/>
                         <outlet property="settingsLabel" destination="3t0-BU-yRC" id="qcR-XH-LiK"/>
                         <outlet property="shareLocation" destination="Ks6-3V-uHT" id="pHF-SX-iW9"/>
-                        <outlet property="singIn" destination="sef-U6-uaf" id="OIS-eS-LGg"/>
+                        <outlet property="signIn" destination="sef-U6-uaf" id="N9Z-Ca-DVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGe-zI-huk" userLabel="First Responder" sceneMemberID="firstResponder"/>

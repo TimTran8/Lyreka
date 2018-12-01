@@ -16,4 +16,6 @@ class Theme {
     static let smallButton = "wood_small_button"
     static let mainBackground = "background_walnut"
     static let logo = "wood_burnt_logo"
+    static let titleFontColor = UIColor.black
+    static let mainFontColor = UIColor.black
 }
