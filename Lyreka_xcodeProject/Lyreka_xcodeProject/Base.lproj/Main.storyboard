@@ -181,7 +181,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dv-vG-Ffe">
-                                <rect key="frame" x="309" y="220" width="51" height="31"/>
+                                <rect key="frame" x="309" y="192" width="51" height="31"/>
                                 <connections>
                                     <action selector="enableDifficultMode:" destination="WF8-FB-43l" eventType="valueChanged" id="qpn-Ho-hRO"/>
                                 </connections>
@@ -195,6 +195,7 @@
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="leading" secondItem="otT-LP-bql" secondAttribute="trailing" multiplier="0.1" id="4MS-nO-mYi"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="height" secondItem="sef-U6-uaf" secondAttribute="height" id="5eG-Li-rCC"/>
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="height" secondItem="otT-LP-bql" secondAttribute="height" multiplier="0.1" id="67h-OI-fbE"/>
+                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="centerY" secondItem="qwj-Hu-ddV" secondAttribute="centerY" constant="20" id="8u2-vj-QU0"/>
                             <constraint firstItem="sef-U6-uaf" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.45" id="BEX-5n-GRV"/>
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="top" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.1" id="ExB-Se-fCZ"/>
                             <constraint firstItem="1Dv-vG-Ffe" firstAttribute="centerX" secondItem="qwj-Hu-ddV" secondAttribute="centerX" id="G47-1g-nfQ"/>
@@ -206,7 +207,6 @@
                             <constraint firstItem="UPS-ht-evw" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="VA3-hm-qtJ"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="height" secondItem="sef-U6-uaf" secondAttribute="height" id="WNo-EI-m8O"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="width" secondItem="otT-LP-bql" secondAttribute="width" multiplier="0.3" id="WuG-52-60F"/>
-                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="top" secondItem="qwj-Hu-ddV" secondAttribute="topMargin" constant="220" id="XEN-ta-riq"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="centerX" secondItem="otT-LP-bql" secondAttribute="centerX" id="Zc7-Sv-N58"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="leading" secondItem="otT-LP-bql" secondAttribute="trailing" multiplier="0.1" id="bER-QP-3qg"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.45" id="e6j-J1-UH6"/>
