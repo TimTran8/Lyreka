@@ -1,13 +1,17 @@
 # CMPT275Group8
 
 # Lyreka -- Walk down melody lane
-
 Lyreka will be targeting Alzheimer's patients and their caregivers by offering familiar songs and by asking them to intermittently complete lyrics, thereby helping them to stimulate their memory and easing them into a relaxed state which encourages social interaction[1][2]. This application has a niche market which consists of Alzheimer patients who liked to listen to songs at a younger age. The playlist of the songs for the patient will be curated by the caretakers or family members of the patient. This will be accomplished through a website connected to the application, by downloading the song and associated game file. An Alzheimer’s patient can become agitated and frustrated amidst a group conversation or when they are overwhelmed by too much noise. This can lead to confusion and emotional reactions and develop into violent outbursts[3]. Lyreka could potentially prevent these situations and help the patients remain calm by playing melodies of songs that brought back from the younger years of their life. This would alleviate the task of caretaking and help create a more positive and joyful atmosphere around the patients. In order to cater to larger market share, our application will be available on all iOS devices running IOS 11.2.6 and above, where mobility encourages the user to play anytime, anywhere.
 # Our Application
 
 
-  # Our Website
+ # Our Website
+Through a web browser the caretaker will have access to many supplemental functions of Lyreka. This will be accessible through a web browser and necessary to access a patient's statistics, add a song to the database through a user friendly User Interface and browse the online database. Main page is where you can upload songs. Once songs are uploaded you can play, download, and delete through the website. On Stats page you can venter an email of an existing user
 
+For testing purposes you can do the following:
+Enter "test@sfu.ca" and submit to see an existing user in the database and their stats
+
+Website: Lyreka.herokuapp.com
 
 # Contact us
 Please use the following website to contact us and to get to know our team members
