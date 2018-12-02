@@ -41,6 +41,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var option3: UIButton!
     @IBOutlet weak var option4: UIButton!
     
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var pause: UIButton!
+    
     //Variable: supportedInterfaceOrientations
     //Description: Set UI orientation to landscapeLeft
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -75,6 +78,24 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         isGameEnd = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        
+        //background constraints and source
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
+        
+        //pause button constraints
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            pause.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        pause.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
+        pause.titleLabel?.textColor = Theme.mainFontColor
     }
     
 
@@ -135,6 +156,10 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 audioPlayer.volume = 1.0
                 audioPlayer.prepareToPlay()
                 audioPlayer.play()
+                
+                //font, size, color
+                songName.font = UIFont(name: Theme.titleFontName, size: 62)
+                songName.textAlignment = .center
                 
                 //Run lyrics and options
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GameViewController.showLyrics), userInfo: nil, repeats: true)
