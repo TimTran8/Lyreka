@@ -677,6 +677,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YWM-35-chh">
+                                <rect key="frame" x="45" y="-90" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-lQ-2ld">
                                 <rect key="frame" x="0.0" y="76.5" width="667" height="298.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -693,7 +697,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="667" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="light_wood_top_bar" highlightedImage="light_wood_top_bar" translatesAutoresizingMaskIntoConstraints="NO" id="1bo-XS-0ro">
+                                                <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1bo-XS-0ro">
                                                     <rect key="frame" x="0.0" y="0.0" width="667" height="79"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -763,6 +767,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="back" destination="aip-Kr-NXl" id="I4F-QZ-SRI"/>
+                        <outlet property="bg" destination="YWM-35-chh" id="fH7-jO-0er"/>
                         <outlet property="choose_a_song" destination="Df2-tl-gYS" id="6uW-aY-lqO"/>
                         <outlet property="edit_button" destination="wQn-01-6Aq" id="uOY-Kt-xy3"/>
                         <outlet property="header_background" destination="4Gy-lc-JER" id="KZE-uT-jxY"/>
@@ -946,7 +951,6 @@
     <resources>
         <image name="background_walnut" width="998" height="564"/>
         <image name="light_wood_button" width="578" height="236"/>
-        <image name="light_wood_top_bar" width="2200" height="88"/>
         <image name="solid-dark-wood-grain-texture-free" width="2700" height="1700"/>
         <image name="wood_big_button" width="198" height="84"/>
         <image name="wood_burnt_logo" width="1182" height="590"/>

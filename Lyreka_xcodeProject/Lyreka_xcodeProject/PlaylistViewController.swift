@@ -48,6 +48,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var back: UIButton!
     @IBOutlet weak var header_background: UIImageView!
     @IBOutlet weak var choose_a_song: UILabel!
+    @IBOutlet weak var bg: UIImageView!
     
     
     //Force landscape
@@ -86,6 +87,16 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = songs[indexPath.row]
         cell.textLabel?.textAlignment = .center
 //        cell.highScore_label.text = String(highScores[indexPath.row])
+        
+        //set background of cell
+        let image : UIImage = UIImage(named: Theme.cellBackground)!
+        let cell_bg = UIImageView(image: image)
+        cell.backgroundView = cell_bg
+        
+        //set cell font and color
+        cell.textLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
+        cell.textLabel?.textColor = Theme.mainFontColor
+        
         return cell
     }
     
@@ -153,6 +164,16 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         
         print("DEBUG: Playlist view loaded")
         
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
+        
         header_background.image = UIImage(named: Theme.tableTop)
         
         choose_a_song.font = UIFont(name: Theme.titleFontName, size: 62)
@@ -169,6 +190,12 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         back.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
         back.titleLabel?.textColor = Theme.mainFontColor
         
+        //removes 35px space at top of table
+        myTableView.tableHeaderView = nil
+        
+        myTableView.backgroundColor = UIColor.clear
+        myTableView.isOpaque = false
+        myTableView.backgroundView = nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
