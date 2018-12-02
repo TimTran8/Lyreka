@@ -163,17 +163,20 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
             lcManager.desiredAccuracy = kCLLocationAccuracyBest
 //            lcManager.requestLocation()
             lcManager.startUpdatingLocation()
+            guard let locValue: CLLocationCoordinate2D = lcManager.location?.coordinate else {return}
+            getAddressFromLatLon(pdblLatitude: locValue.latitude.description, withLongitude: locValue.longitude.description)
         }
-
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else {return}
         print("locations = \(locValue.latitude) \(locValue.longitude)")
-        getAddressFromLatLon(pdblLatitude: locValue.latitude.description, withLongitude: locValue.longitude.description)
+//        getAddressFromLatLon(pdblLatitude: locValue.latitude.description, withLongitude: locValue.longitude.description)
 //        let location = locations[0]
 //        print("test \(location.coordinate)")
     }
+    
+    var documentInteractionController : UIDocumentInteractionController = UIDocumentInteractionController()
     
     func getAddressFromLatLon(pdblLatitude: String, withLongitude pdblLongitude: String){
         var center : CLLocationCoordinate2D = CLLocationCoordinate2D()
@@ -194,32 +197,38 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
                 let pm = placemarks! as [CLPlacemark]
                 if pm.count > 0 {
                     let pm = placemarks![0]
-                    print(pm.country)
-                    print(pm.locality)
-                    print(pm.subLocality)
-                    print(pm.thoroughfare)
-                    print(pm.postalCode)
-                    print(pm.subThoroughfare)
+//                    print(pm.country)
+//                    print(pm.locality)
+//                    print(pm.subLocality)
+//                    print(pm.thoroughfare)
+//                    print(pm.postalCode)
+//                    print(pm.subThoroughfare)
                     var addressString : String = ""
                     if pm.subLocality != nil {
-                        addressString = addressString + pm.subLocality! + ", "
+                        addressString = addressString + pm.subLocality! + " "
                     }
                     if pm.thoroughfare != nil {
-                        addressString = addressString + pm.thoroughfare! + ", "
+                        addressString = addressString + pm.thoroughfare! + " "
                     }
                     if pm.locality != nil {
-                        addressString = addressString + pm.locality! + ", "
+                        addressString = addressString + pm.locality! + " "
                     }
                     if pm.country != nil {
-                        addressString = addressString + pm.country! + ", "
+                        addressString = addressString + pm.country! + " "
                     }
                     if pm.postalCode != nil {
-                        addressString = addressString + pm.postalCode! + " "
+                        addressString = addressString + pm.postalCode!
                     }
                     print(addressString)
+                    
+                    let urlString = addressString.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+                    let url = URL(string: "whatsapp://send?text=\(urlString!)")
+                    if UIApplication.shared.canOpenURL(url! as URL)
+                    {
+                        UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+                    }
                 }
         })
-        
     }
     
 
