@@ -6,7 +6,7 @@ Lyreka will be targeting Alzheimer's patients and their caregivers by offering f
 
 
  # Our Website
-Through a web browser the caretaker will have access to many supplemental functions of Lyreka. This will be accessible through a web browser and necessary to access a patient's statistics, add a song to the database through a user friendly User Interface and browse the online database. Main page is where you can upload songs. Once songs are uploaded you can play, download, and delete through the website. On Stats page you can venter an email of an existing user
+Through a web browser the caretaker will have access to many supplemental functions of Lyreka. This will be accessible through a web browser and necessary to access a patient's statistics, add a song to the database through a user friendly User Interface and browse the online database. The main page is where you can upload songs. Once songs are uploaded you can play, download, and delete through the website. On Stats page you can enter an email of an existing user to view the user history graphed on a table. 
 
 For testing purposes you can do the following:
 Enter "test@sfu.ca" and submit to see an existing user in the database and their stats
