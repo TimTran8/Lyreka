@@ -18,15 +18,12 @@ struct SongFile: Decodable
 var song = [SongFile]()
 
 
-
-
-//{"_id":"5bf0b5a46d5f610004290b50","length":5998687,"chunkSize":261120,"uploadDate":"2018-11-18T00:43:21.086Z","filename":"Avicii - Wake Me Up.mp3","md5":"92e526af198a0fa9d55d51a4554f6834","contentType":"audio/mp3"}]
-
 class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, URLSessionDataDelegate {
 
 
     @IBOutlet weak var myTableView2: UITableView!
     
+    @IBOutlet weak var download_label: UILabel!
     
     
     override func viewDidLoad() {
@@ -34,6 +31,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         print("DEBUG: OnlineSongsView loaded")
         song = [SongFile]()
         self.getSongName()
+        download_label.text = ""
         
         // Do any additional setup after loading the view.
     }
@@ -145,81 +143,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     
-    @IBAction func check(_ sender: UIButton) {
-//        let songFileName = "Bohemian Rhapsody.mp3"
-        let docDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-//        let desURL = docDirURL.appendingPathComponent(songFileName)
-//
-//        //check file exists
-//        if FileManager.default.fileExists(atPath: desURL.path)
-//        {
-//            print("DEBUG: File is downloaded at %@", desURL.path)
-//        }
-//        else
-//        {
-//            print("DEBUG: File is not saved")
-//        }
-//        //check the size
-//        do
-//        {
-//            let fileAttr = try FileManager.default.attributesOfItem(atPath: desURL.path)
-//            let fileSize = fileAttr[FileAttributeKey.size] as! UInt64
-//            print("DEBUG: Download file size = %@", fileSize)
-//        }
-//        catch{print("ERROR: something goes wrong")}
-//
-//        //play the song
-//        do {
-//            let player = try AVAudioPlayer(contentsOf: desURL)
-//
-//            player.volume = 1.0
-//            player.prepareToPlay()
-//            print("DEBUG: Song duration = " + String(player.duration))
-//            player.play()
-//            while(player.isPlaying)
-//            {
-//                print("DEBUG: Song is playing, " + String(player.currentTime))
-//                sleep(1)
-//            }
-//            print("DEBUG: Song Done")
-//        } catch let error {
-//            print(error.localizedDescription)
-//        }
-        
-        //check lyrics exist
-//        let lyricsFileName = "Bohemian Rhapsody.lrc"
-        let lyricsFileName = "Fly Me To The Moon.lrc"
-        let lrcURL = docDirURL.appendingPathComponent(lyricsFileName)
-        if FileManager.default.fileExists(atPath: lrcURL.path)
-        {
-            print("DEBUG: File is downloaded at %@", lrcURL.path)
-        }
-        else
-        {
-            print("DEBUG: File is not saved")
-        }
-        //check the size
-        do
-        {
-            let fileAttr = try FileManager.default.attributesOfItem(atPath: lrcURL.path)
-            let fileSize = fileAttr[FileAttributeKey.size] as! UInt64
-            print("DEBUG: Download file size = %@", fileSize)
-        }
-        catch{print("ERROR: something goes wrong")}
-        
-        do
-        {
-            let fullText = try String(contentsOfFile: lrcURL.path, encoding: .utf8)
-            print(fullText)
-//            let output = parse_lyrics(input: fullText)
-//            print(output)
-        }
-        catch { print("DEBUG: Failed to read lyrics") }
 
-        
-
-        
-    }
     
     func isSongExist(songName: String) -> Bool
     {
@@ -264,6 +188,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func download_song(songToDownload: String)
     {
+        download_label.text = "Downloading mp3..."
         print("DEBUG: Prepare to download " + songToDownload)
         let songFileName = songToDownload
         let song_to_download = songToDownload.replacingOccurrences(of: " ", with: "%20")
@@ -283,6 +208,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 //Using downloadTask2
                 let request = URLRequest(url: dl_url)
                 let task = URLSession.shared.downloadTask(with: request){ (location, response, error) in
+                    
                     if let location = location, error == nil
                     {
                         if let statusCode = (response as? HTTPURLResponse)?.statusCode
@@ -331,6 +257,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
     
     func get_lyrics(songToDownload: String)
     {
+        download_label.text = "Downloading lyrics..."
         print("DEBUG: getting lyrics...")
         var songName = songToDownload.replacingOccurrences(of: ".mp3", with: "")
         songName  = songName.replacingOccurrences(of: " ", with: "%20")
@@ -351,7 +278,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 guard let data = data else{return}
                 let rowLyrics  = String(data: data, encoding: String.Encoding.utf8)! as String
-                print(rowLyrics)
+//                print(rowLyrics)
                 let outputLyrics = self.parse_lyrics(input: rowLyrics)
                 
                 
@@ -359,6 +286,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 let lrcFileName = songName.replacingOccurrences(of: "%20", with: " ") + ".lrc"
                 let desURL = docDirURL.appendingPathComponent(lrcFileName)
                 print("DEBUG: Download lyrics to: %@", desURL)
+                self.download_label.text = ""
                 do
                 {
                     try outputLyrics.write(to: desURL, atomically: false, encoding: .utf8)
@@ -380,10 +308,6 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
     {
         var result = ""
         print("DEBUG: Parsing lyrics...")
-        
-//        let raw_input = input.replacingOccurrences(of: "][", with: "]\n[")
-//        var full_text = raw_input.components(separatedBy: "\n")
-//        full_text = full_text.sorted { $0.localizedCaseInsensitiveCompare($1) == ComparisonResult.orderedAscending }
 
         var good_input = ""
 
@@ -409,12 +333,6 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if full_text[i].contains("[0")
             {
-//                if full_text[i].contains("][")
-//                {
-//                    let start = full_text[i].lastIndex(of: "[")
-//                    let end = full_text[i].lastIndex(of: "]")
-//                    full_text[i] = full_text[i].replaceSubrange(start!..<end!, with: "")
-//                }
                 var line = full_text[i]
                 line = line.replacingOccurrences(of: "[", with: "")
                 line = line.replacingOccurrences(of: "]", with: "\t")
@@ -437,12 +355,124 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        
+        result = generate_question(input: result)
         
         
         return result;
     }
     
+    
+    func generate_question(input: String)-> String
+    {
+
+        print("DEBUG: Generating question...\n")
+        var result = ""
+        let options_base:[String] = ["\ttight\thurt\tdifference","\tslow\tpull\tlisten","\tbad\tfail\tfaith","\tfar\tsharp\tgift","\trare\tshare\ttell","\tlight\twell\tcool","\tpast\teagle\tvoice","\tnight\tdish\ttail","\tman\tcall\thope","\tnote\tsave\tfinal"]
+        var raw_input = input.components(separatedBy: "\n")
+        
+        let num_question = raw_input.count / 4
+        
+        for i in 0..<raw_input.count
+        {
+            var line = raw_input[i]
+            if line != ""
+            {
+                if (i % num_question) == (num_question - 1)
+                {
+                    var start_index = line.lastIndex(of: " ")
+                    let end_index = line.range(of: "\ta")?.lowerBound
+                    if (start_index != nil) && (end_index != nil)
+                    {
+                        start_index = line.index(line.lastIndex(of: " ")!, offsetBy: 1)
+                        let correct_answer = line[start_index!..<end_index!]
+                        line = line.replacingOccurrences(of: correct_answer, with: "____")
+                        line = line.replacingOccurrences(of: "\ta", with: ("\t" + correct_answer))
+                        let random_index = Int(arc4random_uniform(10))
+                        line = line.replacingOccurrences(of: "\tb\tc\td", with: options_base[random_index])
+                    }
+                }
+                result += line + "\n"
+            }
+        }
+        
+//        print(result)
+        return result;
+    }
+    
+    //DEBUG USE FUNCTION
+    @IBAction func check(_ sender: UIButton) {
+        //        let songFileName = "Bohemian Rhapsody.mp3"
+        let docDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        //        let desURL = docDirURL.appendingPathComponent(songFileName)
+        //
+        //        //check file exists
+        //        if FileManager.default.fileExists(atPath: desURL.path)
+        //        {
+        //            print("DEBUG: File is downloaded at %@", desURL.path)
+        //        }
+        //        else
+        //        {
+        //            print("DEBUG: File is not saved")
+        //        }
+        //        //check the size
+        //        do
+        //        {
+        //            let fileAttr = try FileManager.default.attributesOfItem(atPath: desURL.path)
+        //            let fileSize = fileAttr[FileAttributeKey.size] as! UInt64
+        //            print("DEBUG: Download file size = %@", fileSize)
+        //        }
+        //        catch{print("ERROR: something goes wrong")}
+        //
+        //        //play the song
+        //        do {
+        //            let player = try AVAudioPlayer(contentsOf: desURL)
+        //
+        //            player.volume = 1.0
+        //            player.prepareToPlay()
+        //            print("DEBUG: Song duration = " + String(player.duration))
+        //            player.play()
+        //            while(player.isPlaying)
+        //            {
+        //                print("DEBUG: Song is playing, " + String(player.currentTime))
+        //                sleep(1)
+        //            }
+        //            print("DEBUG: Song Done")
+        //        } catch let error {
+        //            print(error.localizedDescription)
+        //        }
+        
+        //check lyrics exist
+        //        let lyricsFileName = "Bohemian Rhapsody.lrc"
+        //        let lyricsFileName = "Fly Me To The Moon.lrc"
+        let lyricsFileName = "My Heart Will Go On.lrc"
+        let lrcURL = docDirURL.appendingPathComponent(lyricsFileName)
+        if FileManager.default.fileExists(atPath: lrcURL.path)
+        {
+            print("DEBUG: File is downloaded at %@", lrcURL.path)
+        }
+        else
+        {
+            print("DEBUG: File is not saved")
+        }
+        //check the size
+        do
+        {
+            let fileAttr = try FileManager.default.attributesOfItem(atPath: lrcURL.path)
+            let fileSize = fileAttr[FileAttributeKey.size] as! UInt64
+            print("DEBUG: Download file size = %@", fileSize)
+        }
+        catch{print("ERROR: something goes wrong")}
+        
+        do
+        {
+            let fullText = try String(contentsOfFile: lrcURL.path, encoding: .utf8)
+            print(fullText)
+            //            let output = parse_lyrics(input: fullText)
+            //            print(output)
+        }
+        catch { print("DEBUG: Failed to read lyrics") }
+        
+    }
     
     
 }

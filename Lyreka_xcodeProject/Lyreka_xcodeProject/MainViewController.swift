@@ -77,6 +77,11 @@ class MainViewController: UIViewController {
         Play.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
         Settings.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
         Exit.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        
+        Play.titleLabel?.textColor = Theme.mainFontColor
+        Settings.titleLabel?.textColor = Theme.mainFontColor
+        Exit.titleLabel?.textColor = Theme.mainFontColor
+        
 //        logo.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logo)
         logo.image = UIImage(named: Theme.logo)!
@@ -89,7 +94,6 @@ class MainViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     //Function: unwindToMainViewController
     //Input: UIStoryboardSegue

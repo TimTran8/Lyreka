@@ -19,6 +19,16 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var themeButton: [UIButton]!
     @IBOutlet weak var enableDifficultMode: UISwitch!
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var settingsLabel: UILabel!
+    @IBOutlet weak var enableDifficultImage: UIView!
+    @IBOutlet weak var enableDifficultLabel: UILabel!
+    @IBOutlet weak var onlineSongLibrary: UIButton!
+    @IBOutlet weak var selectTheme: UIButton!
+    @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var shareLocation: UIButton!
+    @IBOutlet weak var back: UIButton!
+    @IBOutlet weak var center_toggle_image: UIImageView!
     
     //Force landscape
     
@@ -40,6 +50,46 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
         
         enableDifficultMode.setOn(UserDefaults.standard.bool(forKey: "isDifficultModeOn"), animated: false)
         
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
+        
+        settingsLabel.font = UIFont(name: Theme.titleFontName, size: 62)
+        settingsLabel.textAlignment = .center
+        enableDifficultLabel.font = UIFont(name: Theme.titleFontName, size: 22)
+        
+        center_toggle_image.image = UIImage(named: Theme.bigButton)
+        back.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        onlineSongLibrary.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        selectTheme.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        signIn.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        shareLocation.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            back.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            onlineSongLibrary.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            selectTheme.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            signIn.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            shareLocation.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        back.titleLabel?.textColor = Theme.mainFontColor
+        onlineSongLibrary.titleLabel?.textColor = Theme.mainFontColor
+        selectTheme.titleLabel?.textColor = Theme.mainFontColor
+        signIn.titleLabel?.textColor = Theme.mainFontColor
+        shareLocation.titleLabel?.textColor = Theme.mainFontColor
     }
     
     override func didReceiveMemoryWarning() {
