@@ -150,12 +150,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="light_wood_button" translatesAutoresizingMaskIntoConstraints="NO" id="w1v-it-syA">
                                         <rect key="frame" x="-5" y="-12" width="237" height="120"/>
                                     </imageView>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dv-vG-Ffe">
-                                        <rect key="frame" x="88" y="49" width="49" height="31"/>
-                                        <connections>
-                                            <action selector="enableDifficultMode:" destination="WF8-FB-43l" eventType="valueChanged" id="qpn-Ho-hRO"/>
-                                        </connections>
-                                    </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Enable Difficult Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6C1-PS-7JV">
                                         <rect key="frame" x="21" y="20" width="180" height="20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -186,6 +180,12 @@
                                     <segue destination="zdz-7g-GY9" kind="show" id="TSp-HW-ofX"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Dv-vG-Ffe">
+                                <rect key="frame" x="309" y="220" width="51" height="31"/>
+                                <connections>
+                                    <action selector="enableDifficultMode:" destination="WF8-FB-43l" eventType="valueChanged" id="qpn-Ho-hRO"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.95604798140000002" green="1" blue="0.9850857596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -197,8 +197,8 @@
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="height" secondItem="otT-LP-bql" secondAttribute="height" multiplier="0.1" id="67h-OI-fbE"/>
                             <constraint firstItem="sef-U6-uaf" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.45" id="BEX-5n-GRV"/>
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="top" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.1" id="ExB-Se-fCZ"/>
+                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="centerX" secondItem="qwj-Hu-ddV" secondAttribute="centerX" id="G47-1g-nfQ"/>
                             <constraint firstItem="sef-U6-uaf" firstAttribute="height" secondItem="otT-LP-bql" secondAttribute="height" multiplier="0.2" id="Jiy-cZ-FKu"/>
-                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="top" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.5" id="KNW-sA-Alu"/>
                             <constraint firstItem="6C1-PS-7JV" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.48" id="Mn9-iI-bdc"/>
                             <constraint firstItem="vCl-gk-6vg" firstAttribute="centerX" secondItem="3A1-uy-HBL" secondAttribute="centerX" id="PhO-OZ-jG2"/>
                             <constraint firstItem="vCl-gk-6vg" firstAttribute="centerY" secondItem="qwj-Hu-ddV" secondAttribute="centerY" id="QjZ-bD-6f4"/>
@@ -206,12 +206,12 @@
                             <constraint firstItem="UPS-ht-evw" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="VA3-hm-qtJ"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="height" secondItem="sef-U6-uaf" secondAttribute="height" id="WNo-EI-m8O"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="width" secondItem="otT-LP-bql" secondAttribute="width" multiplier="0.3" id="WuG-52-60F"/>
+                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="top" secondItem="qwj-Hu-ddV" secondAttribute="topMargin" constant="220" id="XEN-ta-riq"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="centerX" secondItem="otT-LP-bql" secondAttribute="centerX" id="Zc7-Sv-N58"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="leading" secondItem="otT-LP-bql" secondAttribute="trailing" multiplier="0.1" id="bER-QP-3qg"/>
                             <constraint firstItem="UPS-ht-evw" firstAttribute="bottom" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.45" id="e6j-J1-UH6"/>
                             <constraint firstItem="icz-7e-9DU" firstAttribute="centerX" secondItem="UPS-ht-evw" secondAttribute="centerX" id="jv4-B2-YHA"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="top" secondItem="otT-LP-bql" secondAttribute="bottom" multiplier="0.1" id="mrR-i2-5Ee"/>
-                            <constraint firstItem="1Dv-vG-Ffe" firstAttribute="centerX" secondItem="otT-LP-bql" secondAttribute="centerX" id="n6p-da-TyK"/>
                             <constraint firstItem="4ho-rM-JTa" firstAttribute="width" secondItem="otT-LP-bql" secondAttribute="width" multiplier="0.1" id="nJc-Zi-Ut0"/>
                             <constraint firstItem="3t0-BU-yRC" firstAttribute="height" secondItem="otT-LP-bql" secondAttribute="height" multiplier="0.2" id="naa-3N-v2g"/>
                             <constraint firstItem="Ks6-3V-uHT" firstAttribute="width" secondItem="sef-U6-uaf" secondAttribute="width" id="v5a-Sq-wJ4"/>

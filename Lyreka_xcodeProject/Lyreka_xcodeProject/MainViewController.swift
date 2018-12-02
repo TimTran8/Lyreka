@@ -87,12 +87,32 @@ class MainViewController: UIViewController {
         logo.image = UIImage(named: Theme.logo)!
         logo.contentMode = UIViewContentMode.scaleAspectFit
 //        logo.frame = CGRect(x: 20 * UIScreen.main.bounds.width/100, y: 5 * UIScreen.main.bounds.height/100, width: 40 * UIScreen.main.bounds.width/100, height: 90 * UIScreen.main.bounds.height/100)
+        checkAppID()
     }
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func checkAppID()
+    {
+//        let bundleIdentifier =  Bundle.main.bundleIdentifier
+        
+        
+        let docDirURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.path
+        let start_index = docDirURL.range(of: "Application/")?.upperBound
+        let end_index = docDirURL.range(of: "/Documents")?.lowerBound
+        let current_id = String(docDirURL[start_index!..<end_index!])
+        print("DEBUG: app id = " + current_id)
+        if UserDefaults.standard.string(forKey: "myAppID") != current_id
+        {
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+        }
+        UserDefaults.standard.set(current_id, forKey: "myAppID")
     }
     
     //Function: unwindToMainViewController

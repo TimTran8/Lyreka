@@ -278,7 +278,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 guard let data = data else{return}
                 let rowLyrics  = String(data: data, encoding: String.Encoding.utf8)! as String
-//                print(rowLyrics)
+                print(rowLyrics)
                 let outputLyrics = self.parse_lyrics(input: rowLyrics)
                 
                 
@@ -444,7 +444,8 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         //check lyrics exist
         //        let lyricsFileName = "Bohemian Rhapsody.lrc"
         //        let lyricsFileName = "Fly Me To The Moon.lrc"
-        let lyricsFileName = "My Heart Will Go On.lrc"
+//        let lyricsFileName = "My Heart Will Go On.lrc"
+        let lyricsFileName = "Queen Bohemian Rhapsody.lrc"
         let lrcURL = docDirURL.appendingPathComponent(lyricsFileName)
         if FileManager.default.fileExists(atPath: lrcURL.path)
         {
