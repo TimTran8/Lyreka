@@ -99,7 +99,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         pause.titleLabel?.textColor = Theme.mainFontColor
         
         //lyric container
-        lyricContainer.image = UIImage(named: Theme.bigButton)!
+        lyricContainer.image = UIImage(named: Theme.lyricBg)!
     }
     
 
@@ -124,6 +124,22 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 
                 //Run lyrics
                 lyrics.text = ""
+                lyrics.font = UIFont(name: Theme.mainFontName, size: 32)
+                lyrics.textAlignment = .center
+                
+                if UIFont(name: Theme.mainFontName, size: 22) != nil {
+                    option1.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+                }
+                if UIFont(name: Theme.mainFontName, size: 22) != nil {
+                    option2.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+                }
+                if UIFont(name: Theme.mainFontName, size: 22) != nil {
+                    option3.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+                }
+                if UIFont(name: Theme.mainFontName, size: 22) != nil {
+                    option4.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+                }
+                
                 option1.setTitle("", for: .normal)
                 option2.setTitle("", for: .normal)
                 option3.setTitle("", for: .normal)
@@ -247,8 +263,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                             option_btn = view.viewWithTag(i) as! UIButton
                             print("btn" + String(i))
                             option_btn.isEnabled = true
-                            option_btn.backgroundColor = UIColor.cyan
-                            //option_btn.backgroundColor = UIColor.clear
+                            //option_btn.backgroundColor = UIColor.cyan
+                            option_btn.backgroundColor = UIColor.clear
+                            option_btn.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
                             if i == Int(rightAnswerPlacement)
                             {
                                 option_btn.setTitle(options[0][index_question2], for: .normal)
@@ -268,7 +285,8 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                             option_btn = view.viewWithTag(i) as! UIButton
                             option_btn.isEnabled = false
                             option_btn.setTitle("", for: .normal)
-                            option_btn.backgroundColor = UIColor.lightGray
+                            option_btn.backgroundColor = UIColor.clear
+                            option_btn.setBackgroundImage(UIImage(named: Theme.smallButtonGray), for: UIControlState.disabled)
                         }
                     }
                     isShown = true
@@ -419,11 +437,12 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
             option3.isEnabled = false
             option4.isEnabled = false
             
-            option1.backgroundColor = UIColor.lightGray
-            option2.backgroundColor = UIColor.lightGray
-            option3.backgroundColor = UIColor.lightGray
-            option4.backgroundColor = UIColor.lightGray
-            sender.backgroundColor = UIColor.green
+            option1.backgroundColor = UIColor.clear
+            option2.backgroundColor = UIColor.clear
+            option3.backgroundColor = UIColor.clear
+            option4.backgroundColor = UIColor.clear
+            sender.backgroundColor = UIColor.clear
+            sender.setBackgroundImage(UIImage(named: Theme.smallButtonGreen), for: UIControlState.disabled)
             chanceAnswer = difficultLevel
         }
         else
@@ -437,16 +456,16 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 option3.isEnabled = false
                 option4.isEnabled = false
                 
-                option1.backgroundColor = UIColor.lightGray
-                option2.backgroundColor = UIColor.lightGray
-                option3.backgroundColor = UIColor.lightGray
-                option4.backgroundColor = UIColor.lightGray
+                option1.backgroundColor = UIColor.clear
+                option2.backgroundColor = UIColor.clear
+                option3.backgroundColor = UIColor.clear
+                option4.backgroundColor = UIColor.clear
                 chanceAnswer = difficultLevel
             }
             else
             {
                 sender.isEnabled = false
-                sender.backgroundColor = UIColor.lightGray
+                sender.backgroundColor = UIColor.clear
             }
 
         }

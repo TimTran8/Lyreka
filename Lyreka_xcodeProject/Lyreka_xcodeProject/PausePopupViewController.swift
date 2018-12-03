@@ -16,6 +16,10 @@ import UIKit
 class PausePopupViewController: UIViewController {
 
 
+    //@IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var menuView: UIView!
+    @IBOutlet weak var backToPlaylist: UIButton!
+    @IBOutlet weak var resumeSong: UIButton!
     
     //Variable: supportedInterfaceOrientations
     //Description: Set UI orientation to landscapeLeft
@@ -37,6 +41,19 @@ class PausePopupViewController: UIViewController {
         
         //Set background color to light grey
         self.view.backgroundColor = UIColor(red: 128/255.0, green: 128/255.0, blue: 128/255.0, alpha: 0.8)
+        
+        menuView.backgroundColor = UIColor.clear
+        //bg.image = UIImage(named: Theme.bigButton)
+        backToPlaylist.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        resumeSong.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            backToPlaylist.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            resumeSong.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        backToPlaylist.titleLabel?.textColor = Theme.mainFontColor
+        resumeSong.titleLabel?.textColor = Theme.mainFontColor
     }
     
     override func didReceiveMemoryWarning() {

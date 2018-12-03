@@ -22,4 +22,5 @@ class Theme {
     static let mainFontColor = UIColor.black
     static let tableTop = "wood_walnut_bar"
     static let cellBackground = "wood_light_bar"
+    static var lyricBg = "wood_lyric_bg"
 }
