@@ -14,6 +14,8 @@ class Theme {
     static let mainFontName = "SmokeInTheWoods"
     static let bigButton = "wood_big_button"
     static let smallButton = "wood_small_button"
+    static let smallButtonGray = "wood_small_button_gray"
+    static let smallButtonGreen = "wood_small_button_green"
     static let mainBackground = "background_walnut"
     static let logo = "wood_burnt_logo"
     static let titleFontColor = UIColor.black

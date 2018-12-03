@@ -135,10 +135,15 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 option3.isEnabled = false
                 option4.isEnabled = false
                 
-                option1.backgroundColor = UIColor.lightGray
-                option2.backgroundColor = UIColor.lightGray
-                option3.backgroundColor = UIColor.lightGray
-                option4.backgroundColor = UIColor.lightGray
+                //set option buttons to normal images
+                option1.setBackgroundImage(UIImage(named: Theme.smallButtonGray), for: UIControlState.normal)
+                option2.setBackgroundImage(UIImage(named: Theme.smallButtonGray), for: UIControlState.normal)
+                option3.setBackgroundImage(UIImage(named: Theme.smallButtonGray), for: UIControlState.normal)
+                option4.setBackgroundImage(UIImage(named: Theme.smallButtonGray), for: UIControlState.normal)
+//                option1.backgroundColor = UIColor.lightGray
+//                option2.backgroundColor = UIColor.lightGray
+//                option3.backgroundColor = UIColor.lightGray
+//                option4.backgroundColor = UIColor.lightGray
                 
                 score = 0
                 chanceAnswer = difficultLevel
@@ -243,6 +248,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                             print("btn" + String(i))
                             option_btn.isEnabled = true
                             option_btn.backgroundColor = UIColor.cyan
+                            //option_btn.backgroundColor = UIColor.clear
                             if i == Int(rightAnswerPlacement)
                             {
                                 option_btn.setTitle(options[0][index_question2], for: .normal)
