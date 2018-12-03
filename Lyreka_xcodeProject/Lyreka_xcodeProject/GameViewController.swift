@@ -43,6 +43,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
     
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var pause: UIButton!
+    @IBOutlet weak var lyricContainer: UIImageView!
     
     //Variable: supportedInterfaceOrientations
     //Description: Set UI orientation to landscapeLeft
@@ -96,6 +97,9 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         }
         pause.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
         pause.titleLabel?.textColor = Theme.mainFontColor
+        
+        //lyric container
+        lyricContainer.image = UIImage(named: Theme.bigButton)!
     }
     
 
@@ -158,7 +162,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 audioPlayer.play()
                 
                 //font, size, color
-                songName.font = UIFont(name: Theme.titleFontName, size: 62)
+                songName.font = UIFont(name: Theme.titleFontName, size: 42)
                 songName.textAlignment = .center
                 
                 //Run lyrics and options
