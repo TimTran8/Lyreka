@@ -479,39 +479,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LsU-qO-M1S">
-                                <rect key="frame" x="213" y="123" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LsU-qO-M1S">
+                                <rect key="frame" x="233.5" y="112.5" width="200" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248-qK-095">
-                                        <rect key="frame" x="93" y="90" width="55" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Resume"/>
-                                        <connections>
-                                            <action selector="resumeSong:" destination="r9I-Ly-tGI" eventType="touchUpInside" id="hPN-4p-zyf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdQ-Bn-TEY">
-                                        <rect key="frame" x="96" y="49" width="49" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Playlist"/>
-                                        <connections>
-                                            <action selector="back2playlist:" destination="r9I-Ly-tGI" eventType="touchUpInside" id="Wji-d1-yLi"/>
-                                        </connections>
-                                    </button>
                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWX-SS-pcG">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="32"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.66274509803921566" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <items>
                                             <navigationItem title="Pause" id="p8F-v3-1b0"/>
                                         </items>
                                     </navigationBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdQ-Bn-TEY">
+                                        <rect key="frame" x="75.5" y="49.5" width="49" height="30"/>
+                                        <state key="normal" title="Playlist"/>
+                                        <connections>
+                                            <action selector="back2playlist:" destination="r9I-Ly-tGI" eventType="touchUpInside" id="Wji-d1-yLi"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95604798140000002" green="1" blue="0.9850857596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DdQ-Bn-TEY" firstAttribute="top" secondItem="LsU-qO-M1S" secondAttribute="bottom" multiplier="0.33" id="KT9-wq-EkO"/>
+                                    <constraint firstItem="DdQ-Bn-TEY" firstAttribute="centerX" secondItem="LsU-qO-M1S" secondAttribute="centerX" id="oFW-vv-3R1"/>
+                                </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="248-qK-095">
+                                <rect key="frame" x="306" y="206.5" width="55" height="30"/>
+                                <state key="normal" title="Resume"/>
+                                <connections>
+                                    <action selector="resumeSong:" destination="r9I-Ly-tGI" eventType="touchUpInside" id="hPN-4p-zyf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95604798140000002" green="1" blue="0.9850857596" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="248-qK-095" firstAttribute="centerX" secondItem="ydH-je-XWF" secondAttribute="centerX" id="Ihe-iZ-Ppe"/>
+                            <constraint firstItem="LsU-qO-M1S" firstAttribute="width" secondItem="ydH-je-XWF" secondAttribute="width" multiplier="0.3" id="eW4-Gm-YRr"/>
+                            <constraint firstItem="LsU-qO-M1S" firstAttribute="centerX" secondItem="ydH-je-XWF" secondAttribute="centerX" id="ezJ-uF-WFw"/>
+                            <constraint firstItem="LsU-qO-M1S" firstAttribute="centerY" secondItem="ydH-je-XWF" secondAttribute="centerY" id="gDh-b6-97B"/>
+                            <constraint firstItem="LsU-qO-M1S" firstAttribute="height" secondItem="ydH-je-XWF" secondAttribute="height" multiplier="0.4" id="iWV-fm-XpR"/>
+                            <constraint firstItem="248-qK-095" firstAttribute="top" secondItem="ydH-je-XWF" secondAttribute="bottom" multiplier="0.55" symbolic="YES" id="lsq-Qs-mQY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yja-C2-c2A"/>
                     </view>
                     <connections>
