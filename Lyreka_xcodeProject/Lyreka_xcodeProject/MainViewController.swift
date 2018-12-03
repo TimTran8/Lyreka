@@ -11,7 +11,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    
+
     //MARK: Variables
     @IBOutlet weak var bg: UIImageView!
     @IBOutlet weak var logo: UIImageView!
