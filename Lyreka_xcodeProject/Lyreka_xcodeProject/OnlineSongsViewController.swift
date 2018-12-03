@@ -357,7 +357,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
         
         result = generate_question(input: result)
         
-        
+        print(result)
         return result;
     }
     
@@ -379,6 +379,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
             {
                 if (i % num_question) == (num_question - 1)
                 {
+                    print(i)
                     var start_index = line.lastIndex(of: " ")
                     let end_index = line.range(of: "\ta")?.lowerBound
                     if (start_index != nil) && (end_index != nil)
@@ -395,7 +396,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-//        print(result)
+        print(result)
         return result;
     }
     
@@ -469,7 +470,7 @@ class OnlineSongsViewController: UIViewController, UITableViewDelegate, UITableV
             let fullText = try String(contentsOfFile: lrcURL.path, encoding: .utf8)
             print(fullText)
             //            let output = parse_lyrics(input: fullText)
-            //            print(output)
+//                        print(output)
         }
         catch { print("DEBUG: Failed to read lyrics") }
         
