@@ -606,19 +606,19 @@ Songs</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfA-3w-fus">
-                                <rect key="frame" x="167" y="19" width="333.5" height="56"/>
+                                <rect key="frame" x="100" y="19" width="467" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to save your scores" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-y0-Evq">
-                                <rect key="frame" x="329" y="94" width="204.5" height="20.5"/>
+                                <rect key="frame" x="346" y="94" width="204.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH2-Ap-2Nj">
-                                <rect key="frame" x="133.5" y="94" width="58" height="20.5"/>
+                                <rect key="frame" x="116.5" y="94" width="58" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -654,16 +654,16 @@ Songs</string>
                             <constraint firstItem="ljG-7D-H8h" firstAttribute="centerX" secondItem="CbW-R2-kpz" secondAttribute="centerX" id="djX-B3-i42"/>
                             <constraint firstItem="HTt-0M-dPU" firstAttribute="trailing" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" id="egT-O3-uTd"/>
                             <constraint firstItem="VfA-3w-fus" firstAttribute="height" secondItem="ZgX-Kd-CrX" secondAttribute="height" multiplier="0.15" id="esJ-7K-CdB"/>
-                            <constraint firstItem="vOe-y0-Evq" firstAttribute="trailing" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" multiplier="0.8" priority="999" id="jZt-7y-zTy"/>
+                            <constraint firstItem="vOe-y0-Evq" firstAttribute="trailing" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" multiplier="0.825" priority="999" id="jZt-7y-zTy"/>
                             <constraint firstAttribute="bottom" secondItem="HTt-0M-dPU" secondAttribute="bottom" id="mCC-IZ-jPF"/>
-                            <constraint firstItem="vOe-y0-Evq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jH2-Ap-2Nj" secondAttribute="trailing" constant="1" id="ndo-hz-oTq"/>
+                            <constraint firstItem="vOe-y0-Evq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="jH2-Ap-2Nj" secondAttribute="trailing" constant="30" id="ndo-hz-oTq"/>
                             <constraint firstItem="7s9-XN-KC2" firstAttribute="leading" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" multiplier="0.55" id="q1W-Pc-Q3l"/>
                             <constraint firstItem="CbW-R2-kpz" firstAttribute="height" secondItem="ZgX-Kd-CrX" secondAttribute="height" multiplier="0.2" id="sQf-i5-O3i"/>
                             <constraint firstItem="7s9-XN-KC2" firstAttribute="height" secondItem="CbW-R2-kpz" secondAttribute="height" id="t4f-vy-yDT"/>
                             <constraint firstItem="vOe-y0-Evq" firstAttribute="centerY" secondItem="jH2-Ap-2Nj" secondAttribute="centerY" id="t8I-TK-0dk"/>
                             <constraint firstItem="HTt-0M-dPU" firstAttribute="leading" secondItem="ZgX-Kd-CrX" secondAttribute="leading" id="teZ-Wk-O26"/>
-                            <constraint firstItem="jH2-Ap-2Nj" firstAttribute="leading" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" multiplier="0.2" id="wr0-bs-oGp"/>
-                            <constraint firstItem="VfA-3w-fus" firstAttribute="width" secondItem="ZgX-Kd-CrX" secondAttribute="width" multiplier="0.5" id="xwk-ar-wwU"/>
+                            <constraint firstItem="jH2-Ap-2Nj" firstAttribute="leading" secondItem="ZgX-Kd-CrX" secondAttribute="trailing" multiplier="0.175" priority="999" id="wr0-bs-oGp"/>
+                            <constraint firstItem="VfA-3w-fus" firstAttribute="width" secondItem="ZgX-Kd-CrX" secondAttribute="width" multiplier="0.7" id="xwk-ar-wwU"/>
                             <constraint firstItem="A7e-tm-M9p" firstAttribute="centerY" secondItem="ljG-7D-H8h" secondAttribute="centerY" id="yhn-aF-t8i"/>
                             <constraint firstItem="jH2-Ap-2Nj" firstAttribute="top" secondItem="ZgX-Kd-CrX" secondAttribute="bottom" multiplier="0.25" id="zmR-8U-vqa"/>
                         </constraints>
@@ -735,7 +735,7 @@ Songs</string>
                                 <rect key="frame" x="0.0" y="0.0" width="667" height="76.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a song!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df2-tl-gYS">
-                                <rect key="frame" x="198.5" y="19" width="267" height="20.5"/>
+                                <rect key="frame" x="148.5" y="19" width="367" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -772,7 +772,7 @@ Songs</string>
                             <constraint firstItem="wQn-01-6Aq" firstAttribute="centerY" secondItem="aip-Kr-NXl" secondAttribute="centerY" id="dJo-dH-Yv5"/>
                             <constraint firstItem="wQn-01-6Aq" firstAttribute="width" secondItem="aip-Kr-NXl" secondAttribute="width" id="eLJ-s6-47Y"/>
                             <constraint firstItem="4Gy-lc-JER" firstAttribute="leading" secondItem="Q8J-By-WzW" secondAttribute="leading" id="erK-G3-bFs"/>
-                            <constraint firstItem="Df2-tl-gYS" firstAttribute="width" secondItem="4Gy-lc-JER" secondAttribute="width" multiplier="0.4" id="lzJ-HX-fDD"/>
+                            <constraint firstItem="Df2-tl-gYS" firstAttribute="width" secondItem="4Gy-lc-JER" secondAttribute="width" multiplier="0.55" id="lzJ-HX-fDD"/>
                             <constraint firstAttribute="bottom" secondItem="1Er-lQ-2ld" secondAttribute="bottom" id="ngV-U6-c2a"/>
                             <constraint firstItem="aip-Kr-NXl" firstAttribute="leading" secondItem="Q8J-By-WzW" secondAttribute="trailing" multiplier="0.1" symbolic="YES" id="qfe-hV-fvd"/>
                             <constraint firstItem="aip-Kr-NXl" firstAttribute="height" secondItem="Q8J-By-WzW" secondAttribute="height" multiplier="0.1" id="u09-f4-V7c"/>

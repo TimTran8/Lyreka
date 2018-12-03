@@ -84,12 +84,15 @@ class EndPopupViewController: UIViewController {
         bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         view.sendSubview(toBack: bg)
         
-        songName.font = UIFont(name: Theme.titleFontName, size: 62)
+        songName.font = UIFont(name: Theme.titleFontName, size: 56)
         songName.textAlignment = .center
-        scoreLabel.font = UIFont(name: Theme.titleFontName, size: 32)
+        songName.textColor = Theme.titleFontColor
+        scoreLabel.font = UIFont(name: Theme.mainFontName, size: 32)
         scoreLabel.textAlignment = .center
-        signinReminder.font = UIFont(name: Theme.titleFontName, size: 32)
+        scoreLabel.textColor = Theme.mainFontColor
+        signinReminder.font = UIFont(name: Theme.mainFontName, size: 32)
         signinReminder.textAlignment = .center
+        signinReminder.textColor = Theme.mainFontColor
         
         playNext.backgroundColor = UIColor.clear
         playAgain.backgroundColor = UIColor.clear
@@ -111,10 +114,10 @@ class EndPopupViewController: UIViewController {
         if UIFont(name: Theme.mainFontName, size: 22) != nil {
             Playlist.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
         }
-        playNext.titleLabel?.textColor = Theme.mainFontColor
-        playAgain.titleLabel?.textColor = Theme.mainFontColor
-        mainMenu.titleLabel?.textColor = Theme.mainFontColor
-        Playlist.titleLabel?.textColor = Theme.mainFontColor
+        playNext.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        playAgain.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        mainMenu.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        Playlist.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
     }
 
     override func didReceiveMemoryWarning() {

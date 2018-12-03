@@ -59,9 +59,9 @@ class Theme {
             Theme.logo = "fabric_double_stitched_logo"
             Theme.titleFontColor = UIColor(red: (243/255.0), green: (236/255.0), blue: (196/255.0), alpha: 1.0)
             Theme.mainFontColor = UIColor(red: (243/255.0), green: (236/255.0), blue: (196/255.0), alpha: 1.0)
-            Theme.tableTop = "fabric_walnut_bar"
-            Theme.cellBackground = "fabric_light_bar"
-            Theme.cellBackgroundGreen = "fabric_light_bar_green"
+            Theme.tableTop = "fabric_dark_upper_bar"
+            Theme.cellBackground = "fabric_dark_bar"
+            Theme.cellBackgroundGreen = "fabric_dark_bar_green"
             Theme.lyricBg = "fabric_lyric_bg"
         }
     }

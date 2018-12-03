@@ -100,6 +100,25 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
         
         //lyric container
         lyricContainer.image = UIImage(named: Theme.lyricBg)!
+        
+        songName.font = UIFont(name: Theme.titleFontName, size: 42)
+        songName.textAlignment = .center
+        songName.textColor = Theme.titleFontColor
+        
+        lyrics.font = UIFont(name: Theme.mainFontName, size: 62)
+        lyrics.textAlignment = .center
+        lyrics.textColor = Theme.mainFontColor
+        
+        option1.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        option2.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        option3.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        option4.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        pause.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        option1.setTitleColor(Theme.mainFontColor, for: UIControlState.disabled)
+        option2.setTitleColor(Theme.mainFontColor, for: UIControlState.disabled)
+        option3.setTitleColor(Theme.mainFontColor, for: UIControlState.disabled)
+        option4.setTitleColor(Theme.mainFontColor, for: UIControlState.disabled)
+        pause.setTitleColor(Theme.mainFontColor, for: UIControlState.disabled)
     }
     
 
@@ -183,7 +202,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 audioPlayer.play()
                 
                 //font, size, color
-                songName.font = UIFont(name: Theme.titleFontName, size: 62)
+                songName.font = UIFont(name: Theme.titleFontName, size: 42)
                 songName.textAlignment = .center
                 
                 //Run lyrics and options

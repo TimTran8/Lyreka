@@ -184,17 +184,18 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         
         choose_a_song.font = UIFont(name: Theme.titleFontName, size: 42)
         choose_a_song.textAlignment = .center
+        choose_a_song.textColor = Theme.titleFontColor
         
         if UIFont(name: Theme.mainFontName, size: 22) != nil {
             edit_button.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
         }
         edit_button.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
-        edit_button.titleLabel?.textColor = Theme.mainFontColor
+        edit_button.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
         if UIFont(name: Theme.mainFontName, size: 22) != nil {
             back.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
         }
         back.setBackgroundImage(UIImage(named: Theme.bigButton), for: UIControlState.normal)
-        back.titleLabel?.textColor = Theme.mainFontColor
+        back.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
         
         //removes 35px space at top of table
         myTableView.tableHeaderView = nil
