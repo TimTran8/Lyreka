@@ -17,6 +17,7 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Variables
     let lcManager = CLLocationManager()
     
+    @IBOutlet var view1: UIView!
     @IBOutlet var themeButton: [UIButton]!
     @IBOutlet weak var enableDifficultMode: UISwitch!
     @IBOutlet weak var bg: UIImageView!
@@ -60,9 +61,12 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
         bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         view.sendSubview(toBack: bg)
         
-        settingsLabel.font = UIFont(name: Theme.titleFontName, size: 62)
+        settingsLabel.font = UIFont(name: Theme.titleFontName, size: 42)
         settingsLabel.textAlignment = .center
-        enableDifficultLabel.font = UIFont(name: Theme.titleFontName, size: 22)
+        settingsLabel.textColor = Theme.titleFontColor
+        
+        enableDifficultLabel.font = UIFont(name: Theme.mainFontName, size: 22)
+        enableDifficultLabel.textColor = Theme.mainFontColor
         
         center_toggle_image.image = UIImage(named: Theme.bigButton)
         back.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
@@ -85,11 +89,16 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
         if UIFont(name: Theme.mainFontName, size: 22) != nil {
             shareLocation.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
         }
-        back.titleLabel?.textColor = Theme.mainFontColor
-        onlineSongLibrary.titleLabel?.textColor = Theme.mainFontColor
-        selectTheme.titleLabel?.textColor = Theme.mainFontColor
-        signIn.titleLabel?.textColor = Theme.mainFontColor
-        shareLocation.titleLabel?.textColor = Theme.mainFontColor
+        back.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        onlineSongLibrary.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        selectTheme.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        signIn.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        shareLocation.setTitleColor(Theme.mainFontColor, for: UIControlState.normal)
+        
+        onlineSongLibrary.titleLabel?.textAlignment = NSTextAlignment.center
+        selectTheme.titleLabel?.textAlignment = NSTextAlignment.center
+        signIn.titleLabel?.textAlignment = NSTextAlignment.center
+        shareLocation.titleLabel?.textAlignment = NSTextAlignment.center
     }
     
     override func didReceiveMemoryWarning() {
@@ -107,15 +116,17 @@ class OptionViewController: UIViewController, CLLocationManagerDelegate {
         themeButton.forEach{ (button) in
             button.isHidden = !button.isHidden
         }
-    
     }
-
     //Function: changeTheme
     //Desription: When theme is selected, the app theme should change (Will implement in version 3)
+    
     @IBAction func changeTheme(_ sender: UIButton) {
-        themeButton.forEach{ (button) in
-            button.isHidden = true
-        }
+//        themeButton.forEach{ (button) in
+//            button.isHidden = true
+//        }
+        
+        Theme.rotateTheme()
+        self.viewDidLoad()
     }
     
     //Function: showPopup

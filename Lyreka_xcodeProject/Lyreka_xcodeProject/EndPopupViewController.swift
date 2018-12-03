@@ -22,7 +22,12 @@ class EndPopupViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var signinReminder: UILabel!
     var score = 0
-
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var playNext: UIButton!
+    @IBOutlet weak var playAgain: UIButton!
+    @IBOutlet weak var mainMenu: UIButton!
+    @IBOutlet weak var Playlist: UIButton!
+    
     //Variable: supportedInterfaceOrientations
     //Description: Set UI orientation to landscapeLeft
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -69,14 +74,47 @@ class EndPopupViewController: UIViewController {
             task.resume()
         }
         
+        bg.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bg)
+        bg.image = UIImage(named: Theme.mainBackground)!
+        bg.contentMode = UIViewContentMode.scaleAspectFill
+        bg.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        bg.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        bg.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        bg.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.sendSubview(toBack: bg)
         
-//        if highScores[index_currentSong] < score
-//        {
-//            highScores[index_currentSong] = score
-//            playlistSync()
-//        }
+        songName.font = UIFont(name: Theme.titleFontName, size: 62)
+        songName.textAlignment = .center
+        scoreLabel.font = UIFont(name: Theme.titleFontName, size: 32)
+        scoreLabel.textAlignment = .center
+        signinReminder.font = UIFont(name: Theme.titleFontName, size: 32)
+        signinReminder.textAlignment = .center
         
-        
+        playNext.backgroundColor = UIColor.clear
+        playAgain.backgroundColor = UIColor.clear
+        mainMenu.backgroundColor = UIColor.clear
+        Playlist.backgroundColor = UIColor.clear
+        playNext.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        playAgain.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        mainMenu.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        Playlist.setBackgroundImage(UIImage(named: Theme.smallButton), for: UIControlState.normal)
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            playNext.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            playAgain.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            mainMenu.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        if UIFont(name: Theme.mainFontName, size: 22) != nil {
+            Playlist.titleLabel?.font = UIFont(name: Theme.mainFontName, size: 22)
+        }
+        playNext.titleLabel?.textColor = Theme.mainFontColor
+        playAgain.titleLabel?.textColor = Theme.mainFontColor
+        mainMenu.titleLabel?.textColor = Theme.mainFontColor
+        Playlist.titleLabel?.textColor = Theme.mainFontColor
     }
 
     override func didReceiveMemoryWarning() {

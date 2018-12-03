@@ -93,6 +93,12 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         let cell_bg = UIImageView(image: image)
         cell.backgroundView = cell_bg
         
+        let image2 : UIImage = UIImage(named: Theme.cellBackgroundGreen)!
+        let cell_bg2 = UIImageView(image: image2)
+        cell.selectedBackgroundView = cell_bg2
+        
+        cell.backgroundColor = UIColor.clear
+        
         //set cell font and color
         cell.textLabel?.font = UIFont(name: Theme.mainFontName, size: 32)
         cell.textLabel?.textColor = Theme.mainFontColor
@@ -176,7 +182,7 @@ class PlaylistViewController: UIViewController, UITableViewDelegate, UITableView
         
         header_background.image = UIImage(named: Theme.tableTop)
         
-        choose_a_song.font = UIFont(name: Theme.titleFontName, size: 62)
+        choose_a_song.font = UIFont(name: Theme.titleFontName, size: 42)
         choose_a_song.textAlignment = .center
         
         if UIFont(name: Theme.mainFontName, size: 22) != nil {

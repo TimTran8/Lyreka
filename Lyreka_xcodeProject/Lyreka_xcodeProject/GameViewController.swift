@@ -183,7 +183,7 @@ class GameViewController: UIViewController, AVAudioPlayerDelegate {
                 audioPlayer.play()
                 
                 //font, size, color
-                songName.font = UIFont(name: Theme.titleFontName, size: 42)
+                songName.font = UIFont(name: Theme.titleFontName, size: 62)
                 songName.textAlignment = .center
                 
                 //Run lyrics and options
