@@ -1,3 +1,4 @@
+// importing libraries
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -10,27 +11,28 @@ const methodOverride = require('method-override');
 const mongoClient = require('mongodb').MongoClient;
 var routes = require('./routes/routes.js');
 
-const app = express();
+const app = express(); // instantiates express server **
 
 
-// Middleware
+// Middleware - grabs library components
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+// sets viewing engine (View controller in MVC)
 app.set('view engine', 'ejs');
-app.use("/", express.static("./public"));
-app.use(bodyParser.json());
-app.use('/', routes);
+app.use("/", express.static("./public")); // on root, serve the public folder
+app.use(bodyParser.json()); // parse the body of the request (eg lyrics site)
+app.use('/', routes);  // sets routes to be different paths (maybe)
 // Mongo URI
-const mongoURI = 'mongodb://cmpt275admin:group8@ds043497.mlab.com:43497/lyreka';
+const mongoURI = 'mongodb://cmpt275admin:group8@ds043497.mlab.com:43497/lyreka'; // retrieves database | mongo collections = db tables
 // For Client ID
 const databaseName = 'lyreka';
 const collection = 'userID';
-// Create mongo connection
-const conn = mongoose.createConnection(mongoURI);
+
+const conn = mongoose.createConnection(mongoURI); // Create mongo connection
 
 // Init gfs
-let gfs;
+let gfs; // gridFS to store files
 
 conn.once('open', () => {
 	// Init stream
@@ -39,10 +41,11 @@ conn.once('open', () => {
 });
 
 // Create storage engine
-const storage = new GridFsStorage({
-	url: mongoURI,
-	file: (req, file) => {
-		return new Promise((resolve, reject) => {
+const storage = new GridFsStorage({ // create storage object
+									// 
+	url: mongoURI, // first argument
+	file: (req, file) => { // second argument
+		return new Promise((resolve, reject) => { // --------------look up
 			const filename = path.basename(file.originalname);
 			const fileInfo = {
 				filename: filename,
@@ -55,8 +58,8 @@ const storage = new GridFsStorage({
 const upload = multer({ storage });
 
 // @route GET /
-// @desc Loads form
-app.get('/', (req, res) => {
+// @desc Loads form(files) 
+app.get('/', (req, res) => { // get root then renders in index
 	gfs.files.find().toArray((err, files) => {
 		// Check if files
 		if (!files || files.length === 0) {
@@ -69,8 +72,9 @@ app.get('/', (req, res) => {
 
 // @route POST /music
 // @desc  Music file to DB
+// when you receive localhost:5000/music -> upload file
 app.post('/music', upload.single('file'), (req, res) => {
-	res.redirect('/');
+	res.redirect('/'); //redirect to homepage
 });
 
 // @route GET /files
@@ -93,7 +97,7 @@ app.get('/files', (req, res) => {
 
 // @route GET /files/:filename
 // @desc  Display single file object
-app.get('/files/:filename', (req, res) => {
+app.get('/files/:filename', (req, res) => { // : is var name
 	gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 		// Check if file
 		if (!file || file.length === 0) {
@@ -176,6 +180,14 @@ app.put('/userID', (req, res) => {
 
 // @route PUT /updateScore
 // @desc  Updats the user score
+
+// var dbs = mongoClient.connect(mongoURI, (err, client)=>{
+// //connect here
+// return client;
+// })
+// dbs.findOne()
+// dbs.findAll()
+
 app.put('/updateScore', (req, res) => {
 	mongoClient.connect(mongoURI, (err, client) => {
 		if (err) {
@@ -191,7 +203,7 @@ app.put('/updateScore', (req, res) => {
 			}
 			if (!result) {
 				console.log('Did not find user in database');
-				res.send(200);
+				res.send(200); // okay server response 
 			} else {
 				var scoreObj = {
 					date: req.body.date,
@@ -200,7 +212,7 @@ app.put('/updateScore', (req, res) => {
 				result.scoreArry.push(scoreObj);
 				coll.update({ email: req.body.email }, { $set: { scoreArry: result.scoreArry } }, () => {
 					console.log('Score updated prefectly');
-					res.send(200);
+					res.send(200); // okay server response
 				});
 			}
 		});
@@ -247,7 +259,8 @@ app.get('/lyrics', (req, res) => {
 var MongoClient = require('mongodb').MongoClient;
 
 // define a route to download a file 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; // specifies a port node-dev app.js
+// specifi
 
 app.listen(port);
 console.log("Running on port", port);

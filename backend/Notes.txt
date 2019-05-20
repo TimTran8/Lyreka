@@ -1,0 +1,17 @@
+node app.js // server
+
+node-dev app.js // restart when save
+
+start on specific port
+node-dev app.js PORT=8080 // any port specified
+
+app.use // middleware
+
+middleware : acts as a componenent in between two things
+
+normal function:
+function(){
+}
+
+arrow function
+var func = ()=>{}
