@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // importing libraries
-=======
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -14,7 +11,6 @@ const methodOverride = require('method-override');
 const mongoClient = require('mongodb').MongoClient;
 var routes = require('./routes/routes.js');
 
-<<<<<<< HEAD
 const app = express(); // instantiates express server **
 
 
@@ -37,29 +33,6 @@ const conn = mongoose.createConnection(mongoURI); // Create mongo connection
 
 // Init gfs
 let gfs; // gridFS to store files
-=======
-const app = express();
-
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
-app.set('view engine', 'ejs');
-app.use("/", express.static("./public"));
-app.use(bodyParser.json());
-app.use('/', routes);
-// Mongo URI
-const mongoURI = 'mongodb://cmpt275admin:group8@ds043497.mlab.com:43497/lyreka';
-// For Client ID
-const databaseName = 'lyreka';
-const collection = 'userID';
-// Create mongo connection
-const conn = mongoose.createConnection(mongoURI);
-
-// Init gfs
-let gfs;
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 
 conn.once('open', () => {
 	// Init stream
@@ -68,18 +41,11 @@ conn.once('open', () => {
 });
 
 // Create storage engine
-<<<<<<< HEAD
 const storage = new GridFsStorage({ // create storage object
 									// 
 	url: mongoURI, // first argument
 	file: (req, file) => { // second argument
 		return new Promise((resolve, reject) => { // --------------look up
-=======
-const storage = new GridFsStorage({
-	url: mongoURI,
-	file: (req, file) => {
-		return new Promise((resolve, reject) => {
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 			const filename = path.basename(file.originalname);
 			const fileInfo = {
 				filename: filename,
@@ -92,13 +58,8 @@ const storage = new GridFsStorage({
 const upload = multer({ storage });
 
 // @route GET /
-<<<<<<< HEAD
 // @desc Loads form(files) 
 app.get('/', (req, res) => { // get root then renders in index
-=======
-// @desc Loads form
-app.get('/', (req, res) => {
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 	gfs.files.find().toArray((err, files) => {
 		// Check if files
 		if (!files || files.length === 0) {
@@ -111,14 +72,9 @@ app.get('/', (req, res) => {
 
 // @route POST /music
 // @desc  Music file to DB
-<<<<<<< HEAD
 // when you receive localhost:5000/music -> upload file
 app.post('/music', upload.single('file'), (req, res) => {
 	res.redirect('/'); //redirect to homepage
-=======
-app.post('/music', upload.single('file'), (req, res) => {
-	res.redirect('/');
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 });
 
 // @route GET /files
@@ -141,11 +97,7 @@ app.get('/files', (req, res) => {
 
 // @route GET /files/:filename
 // @desc  Display single file object
-<<<<<<< HEAD
 app.get('/files/:filename', (req, res) => { // : is var name
-=======
-app.get('/files/:filename', (req, res) => {
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 	gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 		// Check if file
 		if (!file || file.length === 0) {
@@ -228,7 +180,6 @@ app.put('/userID', (req, res) => {
 
 // @route PUT /updateScore
 // @desc  Updats the user score
-<<<<<<< HEAD
 
 // var dbs = mongoClient.connect(mongoURI, (err, client)=>{
 // //connect here
@@ -237,8 +188,6 @@ app.put('/userID', (req, res) => {
 // dbs.findOne()
 // dbs.findAll()
 
-=======
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 app.put('/updateScore', (req, res) => {
 	mongoClient.connect(mongoURI, (err, client) => {
 		if (err) {
@@ -254,11 +203,7 @@ app.put('/updateScore', (req, res) => {
 			}
 			if (!result) {
 				console.log('Did not find user in database');
-<<<<<<< HEAD
 				res.send(200); // okay server response 
-=======
-				res.send(200);
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 			} else {
 				var scoreObj = {
 					date: req.body.date,
@@ -267,11 +212,7 @@ app.put('/updateScore', (req, res) => {
 				result.scoreArry.push(scoreObj);
 				coll.update({ email: req.body.email }, { $set: { scoreArry: result.scoreArry } }, () => {
 					console.log('Score updated prefectly');
-<<<<<<< HEAD
 					res.send(200); // okay server response
-=======
-					res.send(200);
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 				});
 			}
 		});
@@ -318,12 +259,8 @@ app.get('/lyrics', (req, res) => {
 var MongoClient = require('mongodb').MongoClient;
 
 // define a route to download a file 
-<<<<<<< HEAD
 const port = process.env.PORT || 5000; // specifies a port node-dev app.js
 // specifi
-=======
-const port = process.env.PORT || 5000;
->>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
 
 app.listen(port);
 console.log("Running on port", port);
