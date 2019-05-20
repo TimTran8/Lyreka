@@ -20,7 +20,11 @@
     "method-override": "^2.3.10",
     "mongo": "^0.1.0",
     "mongodb": "^3.1.9",
+<<<<<<< HEAD
     "mongoose": "^5.5.9",
+=======
+    "mongoose": "^5.0.9",
+>>>>>>> 96be9f82f309ea66beb251a515b77a8da6195330
     "multer": "^1.4.1",
     "multer-gridfs-storage": "^3.0.0",
     "request": "^2.88.0"
