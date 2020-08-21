@@ -16,7 +16,8 @@ Website: Lyreka.herokuapp.com
 # Contact us
 Please use the following website to contact us and to get to know our team members
 website: https://timtran8.github.io/
-# Refrences
+
+# References
 [1] A. Dassa and D. Amir, “Role of Singing Familiar Songs in Encouraging Conversation Among People with Middle to Late Stage Alzheimer's Disease | Journal of Music Therapy | Oxford Academic,” OUP Academic, 19-Jun-2014. [Online]. Available: https://academic.oup.com/jmt/article-abstract/51/2/131/902235. [Accessed: 26-Sep-2018].
 [2] H. B. Svansdottir and J. Snaedal, “Music therapy in moderate and severe dementia of Alzheimer's type: a case–control study,” International Psychogeriatrics, vol. 18, no. 4, pp. 613–621, 2006. [Online]. Available: https://www.ncbi.nlm.nih.gov/pubmed/16618375. [Accessed: 26-Sep-2018].
 [3] Hollis R. Bohling, “Communication with Alzheimer's Patients: An Analysis of Caregiver Listening Patterns,” The International Journal of Aging and Human Development, 1-December-1991. [Online]. Available: http://journals.sagepub.com/doi/abs/10.2190/8U1F-792P-W9XD-1J94. [Accessed: 26-Sept-2018].
