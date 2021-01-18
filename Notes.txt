@@ -8,10 +8,3 @@ node-dev app.js PORT=8080 // any port specified
 app.use // middleware
 
 middleware : acts as a componenent in between two things
-
-normal function:
-function(){
-}
-
-arrow function
-var func = ()=>{}

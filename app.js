@@ -24,7 +24,8 @@ app.use("/", express.static("./public")); // on root, serve the public folder
 app.use(bodyParser.json()); // parse the body of the request (eg lyrics site)
 app.use('/', routes);  // sets routes to be different paths (maybe)
 // Mongo URI
-const mongoURI = 'mongodb://cmpt275admin:group8@ds043497.mlab.com:43497/lyreka'; // retrieves database | mongo collections = db tables
+// const mongoURI = 'mongodb://Lyreka:diligent8@ds043497.mlab.com:43497/lyreka'; // retrieves database | mongo collections = db tables
+const mongoURI = 'mongodb+srv://cmpt275admin:group8@lyreka.vbwj3.mongodb.net/lyreka?retryWrites=true&w=majority'; // retrieves database | mongo collections = db tables
 // For Client ID
 const databaseName = 'lyreka';
 const collection = 'userID';
@@ -38,11 +39,12 @@ conn.once('open', () => {
 	// Init stream
 	gfs = Grid(conn.db, mongoose.mongo);
 	gfs.collection('music');
+	console.log("Success");
 });
 
 // Create storage engine
 const storage = new GridFsStorage({ // create storage object
-									// 
+	
 	url: mongoURI, // first argument
 	file: (req, file) => { // second argument
 		return new Promise((resolve, reject) => { // --------------look up
@@ -55,6 +57,7 @@ const storage = new GridFsStorage({ // create storage object
 		});
 	}
 });
+
 const upload = multer({ storage });
 
 // @route GET /
