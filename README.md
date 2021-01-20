@@ -13,9 +13,13 @@ Enter "test@sfu.ca" and submit to see an existing user in the database and their
 
 Website: Lyreka.herokuapp.com
 
-# Contact us
-Please use the following website to contact us and to get to know our team members
-website: https://timtran8.github.io/
+## Website at Lyreka.herokuapp.com
+## Main page is where you can upload songs
+## Once songs are uploaded you can play, download, and delete
+## On Stats page you can enter an email of an existing user
+## Enter "test@sfu.ca" and submit to see an existing user in the database and their stats
+
+
 
 # References
 [1] A. Dassa and D. Amir, “Role of Singing Familiar Songs in Encouraging Conversation Among People with Middle to Late Stage Alzheimer's Disease | Journal of Music Therapy | Oxford Academic,” OUP Academic, 19-Jun-2014. [Online]. Available: https://academic.oup.com/jmt/article-abstract/51/2/131/902235. [Accessed: 26-Sep-2018].
