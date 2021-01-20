@@ -10,7 +10,7 @@ const Grid = require('gridfs-stream');
 const methodOverride = require('method-override');
 const mongoClient = require('mongodb').MongoClient;
 var routes = require('./routes/routes.js');
-
+require('dotenv').config();
 const app = express(); // instantiates express server **
 
 
@@ -24,8 +24,9 @@ app.use("/", express.static("./public")); // on root, serve the public folder
 app.use(bodyParser.json()); // parse the body of the request (eg lyrics site)
 app.use('/', routes);  // sets routes to be different paths (maybe)
 // Mongo URI
-// const mongoURI = 'mongodb://Lyreka:diligent8@ds043497.mlab.com:43497/lyreka'; // retrieves database | mongo collections = db tables
-const mongoURI = 'mongodb+srv://cmpt275admin:group8@lyreka.vbwj3.mongodb.net/lyreka?retryWrites=true&w=majority'; // retrieves database | mongo collections = db tables
+
+const uri = process.env.ATLAS_URI;
+const mongoURI = process.env.MONGO_URI; // retrieves database | mongo collections = db tables
 // For Client ID
 const databaseName = 'lyreka';
 const collection = 'userID';
