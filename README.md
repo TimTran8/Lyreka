@@ -1,5 +1,4 @@
-# CMPT275Group8
-
+# CMPT275Group8 - Fall2018
 # Lyreka -- Walk down melody lane
 Lyreka will be targeting Alzheimer's patients and their caregivers by offering familiar songs and by asking them to intermittently complete lyrics, thereby helping them to stimulate their memory and easing them into a relaxed state which encourages social interaction[1][2]. This application has a niche market which consists of Alzheimer patients who liked to listen to songs at a younger age. The playlist of the songs for the patient will be curated by the caretakers or family members of the patient. This will be accomplished through a website connected to the application, by downloading the song and associated game file. An Alzheimer’s patient can become agitated and frustrated amidst a group conversation or when they are overwhelmed by too much noise. This can lead to confusion and emotional reactions and develop into violent outbursts[3]. Lyreka could potentially prevent these situations and help the patients remain calm by playing melodies of songs that brought back from the younger years of their life. This would alleviate the task of caretaking and help create a more positive and joyful atmosphere around the patients. In order to cater to larger market share, our application will be available on all iOS devices running IOS 11.2.6 and above, where mobility encourages the user to play anytime, anywhere.
 
@@ -12,16 +11,28 @@ Through a web browser the caretaker will have access to many supplemental functi
 For testing purposes you can do the following:
 Enter "test@sfu.ca" and submit to see an existing user in the database and their stats
 
-Website: Lyreka.herokuapp.com
+Website at ~~Lyreka.herokuapp.com~~*
 
-* Website at Lyreka.herokuapp.com
+
 * Main page is where you can upload songs
 * Once songs are uploaded you can play, download, and delete
 * On Stats page you can enter an email of an existing user
 * Enter "test@sfu.ca" and submit to see an existing user in the database and their stats
 
+*Website no longer in use as well as packages deprecated
+## How to Run
+```bash
+$ npm install
+$ npm start
+# Navigate to localhost:5000
+```
 
-
+## Technologies Used
+* NodeJS and ExpressJS for backend
+* Cheerio and JQuery for lyrics scraping
+* MongoDB w/ MLab for databse(2018) 
+* GridFS to store mp3 files in MongoDB
+* Bootstrap for frontend
 # References
 [1] A. Dassa and D. Amir, “Role of Singing Familiar Songs in Encouraging Conversation Among People with Middle to Late Stage Alzheimer's Disease | Journal of Music Therapy | Oxford Academic,” OUP Academic, 19-Jun-2014. [Online]. Available: https://academic.oup.com/jmt/article-abstract/51/2/131/902235. [Accessed: 26-Sep-2018].
 [2] H. B. Svansdottir and J. Snaedal, “Music therapy in moderate and severe dementia of Alzheimer's type: a case–control study,” International Psychogeriatrics, vol. 18, no. 4, pp. 613–621, 2006. [Online]. Available: https://www.ncbi.nlm.nih.gov/pubmed/16618375. [Accessed: 26-Sep-2018].
