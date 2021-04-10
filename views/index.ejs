@@ -5,14 +5,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	 crossorigin="anonymous">
-	<link rel="icon" type="image/x-icon" href="https://vignette.wikia.nocookie.net/dollarschat/images/6/6d/L_Cloister_Black.png/revision/latest?cb=20110305113844">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="icon" type="image/x-icon"
+		href="https://vignette.wikia.nocookie.net/dollarschat/images/6/6d/L_Cloister_Black.png/revision/latest?cb=20110305113844">
 	<style>
 		img {
-      width: 100%;
-    }
-  </style>
+			width: 100%;
+		}
+	</style>
 	<title>Music Files</title>
 </head>
 
@@ -49,7 +50,7 @@
 				<h2 class="text-center display-4 my-4">Music Files</h2>
 				<div class="input-group mb-3">
 					<input class="form-control" type="text" placeholder="Search existing songs" id="songSearch" aria-label="Email"
-					 aria-describedby="basic-addon2" />
+						aria-describedby="basic-addon2" />
 					<script>
 						document.getElementById('songSearch').onkeypress = function (e) {
 							var key = e.charCode || e.keyCode || 0;
@@ -58,7 +59,8 @@
 							}
 						}
 					</script>
-					<input class="btn btn-outline-secondary" type='button' value='Search' onclick="searchSong(document.getElementById('songSearch').value)" />
+					<input class="btn btn-outline-secondary" type='button' value='Search'
+						onclick="searchSong(document.getElementById('songSearch').value)" />
 				</div>
 				<div style="margin: 0 auto;" id="searchCheck">
 
@@ -73,7 +75,8 @@
 					<input type="submit" value="Submit" class="btn btn-primary btn-block">
 					<br>
 					<!-- <h5>Disclaimer</h5> -->
-					<p style="margin: 0 auto; display: table;">Disclaimer: Please add songs with name and artist separated by space as filename for best lyric match results</p>
+					<p style="margin: 0 auto; display: table;">Disclaimer: Please add songs with name and artist separated by
+						space as filename for best lyric match results</p>
 				</form>
 				<hr>
 				<% if(files){ %>
@@ -91,13 +94,15 @@
 					<form method="GET" action="/files/<%= file.filename %> ">
 						<div style="margin: 0 auto; display: table;">
 							<audio controls>
-								<source width="auto" src="https://lyreka.herokuapp.com/files/<%= file.filename %>" type="audio/ogg">
-								<!-- <source src="horse.mp3" type="audio/mpeg">
-							Your browser does not support the audio element. -->
+								<!-- <source width="auto" src="https://lyreka.herokuapp.com/files/<%= file.filename %>" type="audio/ogg"> -->
+								<source width="auto" src="https://localhost:5000/files/medicine.mp3>" type=audio/mp3>
+								
+								Your browser does not support the audio element.
 							</audio>
 						</div>
-						<a class="btn btn-success btn-block mt-4" href="https://lyreka.herokuapp.com/files/<%= file.filename %>" download>Download</a>
-						<!-- <a class="btn btn-success btn-block mt-4" href="http://localhost:5000/files/<%= file.filename %>" download>Download</a> -->
+						<!-- <a class="btn btn-success btn-block mt-4" href="https://lyreka.herokuapp.com/files/<%= file.filename %>" download>Download</a> -->
+						<a class="btn btn-success btn-block mt-4" href="http://localhost:5000/files/<%= file.filename %>"
+							download>Download</a>
 						<!-- <button class="btn btn-success btn-block mt-4">Download</button> -->
 					</form>
 					<form method="POST" action="/files/<%= file._id %>?_method=Delete">
@@ -115,10 +120,12 @@
 	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 	 crossorigin="anonymous"></script> -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	 crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+	</script>
 	<script src='./lyrics.js'></script>
 	<script src='./songs.js'></script>
 </body>

@@ -26,7 +26,7 @@ function getLyrics(filename) {
 function displayData(data) {
 	// console.log(data);
 	// document.getElementById("loading").innerHTML = `<img href="https://vignette.wikia.nocookie.net/aj-failure-club/images/4/4b/Loading-gif-transparent-background-11.gif/revision/latest?cb=20180308015832" style="margin: 0 auto;"></img>`
-	
+	console.log("data:", data);	
 	var test = data;
 	var writetohtml = "";
 	var tempString = "";

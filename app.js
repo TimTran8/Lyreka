@@ -25,27 +25,30 @@ app.use(bodyParser.json()); // parse the body of the request (eg lyrics site)
 app.use('/', routes);  // sets routes to be different paths (maybe)
 // Mongo URI
 
-const uri = process.env.ATLAS_URI;
+// const uri = process.env.ATLAS_URI;
 const mongoURI = process.env.MONGO_URI; // retrieves database | mongo collections = db tables
 // For Client ID
 const databaseName = 'lyreka';
 const collection = 'userID';
 
-const conn = mongoose.createConnection(mongoURI); // Create mongo connection
+// const conn = mongoose.createConnection(mongoURI); // Create mongo connection
+mongoose.connect(mongoURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
 
+const connection = mongoose.connection;
 // Init gfs
 let gfs; // gridFS to store files
 
-conn.once('open', () => {
+connection.once('open', () => {
 	// Init stream
-	gfs = Grid(conn.db, mongoose.mongo);
+	// gfs = Grid(connection.db, mongoose.mongo);
+	gfs = Grid(connection.db, mongoose.mongo);
 	gfs.collection('music');
 	console.log("Success");
 });
 
 // Create storage engine
 const storage = new GridFsStorage({ // create storage object
-	
+
 	url: mongoURI, // first argument
 	file: (req, file) => { // second argument
 		return new Promise((resolve, reject) => { // --------------look up
@@ -84,14 +87,19 @@ app.post('/music', upload.single('file'), (req, res) => {
 // @route GET /files
 // @desc  Display all files in JSON
 app.get('/files', (req, res) => {
+
 	gfs.files.find().toArray((err, files) => {
 		// Check if files
+		for (var n in files) {
+			console.log(files[n].filename);
+		}
 		if (!files || files.length === 0) {
 			return res.status(404).json({
 				err: 'No files exist'
 			});
 		}
-
+		
+		// console.log(res.json(files));
 		// Files exist
 		return res.json(files);
 	});
@@ -102,6 +110,8 @@ app.get('/files', (req, res) => {
 // @route GET /files/:filename
 // @desc  Display single file object
 app.get('/files/:filename', (req, res) => { // : is var name
+	console.log("/files/:", req.params.filename);
+	// console.log("/files/:filename");
 	gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
 		// Check if file
 		if (!file || file.length === 0) {
